@@ -11,7 +11,8 @@ Leer solo cuando haga falta (no se importan para ahorrar contexto):
 - `docs/BRIEF-PLANTILLA.md` — al empezar una web nueva.
 - `docs/CHECKLIST-CALIDAD.md` — antes de dar una web por terminada.
 - `docs/REGISTRO-DIRECCIONES.md` — antes de elegir dirección estética, y para añadir la nueva al acabar.
-- `docs/ENSENANZAS-THREADS.md` — referencias y lecciones guardadas por Àlex.
+- `docs/REFERENCIAS.md` — biblioteca de fuentes, paletas, webs y herramientas; al escribir el plan de diseño.
+- `docs/ENSENANZAS-THREADS.md` — registro de los posts de Àlex y dónde se colocó cada lección; al añadir posts nuevos.
 
 ## Flujo obligatorio para cada web
 1. Leer el brief. Si falta propósito, público o contenido, preguntar antes de diseñar.

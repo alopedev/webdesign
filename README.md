@@ -10,7 +10,8 @@
 | `BRIEF-PLANTILLA.md` | Brief + plan de diseño previo al código | `docs/` |
 | `CHECKLIST-CALIDAD.md` | Accesibilidad, rendimiento, código | `docs/` |
 | `REGISTRO-DIRECCIONES.md` | Memoria de estilos ya usados, para no repetir | `docs/` |
-| `ENSENANZAS-THREADS.md` | Hueco para las lecciones de tus posts | `docs/` |
+| `REFERENCIAS.md` | Biblioteca: pairings, paletas con contraste, webs de referencia, herramientas | `docs/` |
+| `ENSENANZAS-THREADS.md` | Registro de tus posts: qué aportó cada uno y dónde se colocó | `docs/` |
 
 ## Por qué está organizado así
 - **Instrucciones cortas, detalle aparte.** La documentación oficial de Claude Code recomienda CLAUDE.md de menos de 200 líneas, concretos y por secciones; lo largo va en archivos separados. Los `@imports` organizan pero no ahorran contexto, por eso solo se importan los dos documentos que se usan siempre.
