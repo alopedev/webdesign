@@ -1,0 +1,39 @@
+.filtros { position: absolute; inline-size: 0; block-size: 0; overflow: hidden; }
+
+.pagina { row-gap: 0; }
+
+.cabeza { display: grid; gap: var(--s-3); }
+.marca { font-family: var(--f-display); font-size: var(--t-1); font-weight: 700; margin-block-end: var(--s-4); }
+.marca span { font-weight: 500; margin-inline-start: 0.3em; }
+.cabeza h1 { font-size: var(--t-4); max-inline-size: 13em; }
+.intro { font-size: var(--t-1); line-height: 1.45; max-inline-size: 34ch; color: var(--tinta); }
+
+/* Cómo funciona: título a la izquierda, pasos a la derecha */
+.como {
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: var(--s-3);
+  padding-block: var(--s-5) var(--s-6);
+}
+.como h2 { grid-column: 1 / span 4; font-size: var(--t-3); }
+.pasos {
+  grid-column: 6 / -1;
+  display: grid;
+  gap: var(--s-3);
+  padding-inline-start: 1.5em;
+}
+.pasos li { max-inline-size: 60ch; padding-inline-start: 0.4em; }
+.pasos li::marker { font-family: var(--f-display); font-weight: 700; color: var(--acento); }
+.pasos strong { display: block; font-size: var(--t-1); }
+
+.pie {
+  padding-block: var(--s-4);
+  border-block-start: 1px solid var(--pliegue);
+  font-size: var(--t--1);
+  color: var(--tinta-suave);
+}
+
+@media (width < 60rem) {
+  .como h2, .pasos { grid-column: 1 / -1; }
+  .marca { margin-block-end: var(--s-2); }
+}

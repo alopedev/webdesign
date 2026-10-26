@@ -1,0 +1,37 @@
+/* Tokens del plan (PLAN.md). Hoja de práctica corregida: tinta del alumno + bermellón del maestro. */
+:root {
+  /* Color */
+  --gasenshi: oklch(95% 0.007 215);   /* #e9f0f1 papel frío de la página */
+  --hanshi: oklch(98.5% 0.003 215);   /* #f8fbfb la hoja de práctica */
+  --seiboku: oklch(22% 0.02 258);     /* #151b24 tinta azulada: texto y trazos */
+  --tanboku: oklch(46% 0.018 255);    /* #515962 tinta aguada: texto secundario (6,2:1) */
+  --shuboku: oklch(58% 0.2 33);       /* #d73817 bermellón del maestro: números y foco (4,5:1 en la hoja) */
+  --shitajiki: oklch(25% 0.04 265);   /* #182135 fieltro bajo la hoja */
+  --shitajiki-tinta: oklch(86% 0.02 265); /* texto sobre el fieltro (10,5:1) */
+  --pliegue: oklch(from var(--hanshi) calc(l - 0.07) c h); /* doblez de la hoja, solo adorno */
+
+  --fondo: var(--gasenshi);
+  --tinta: var(--seiboku);
+  --tinta-suave: var(--tanboku);
+  --acento: var(--shuboku);
+  --accion: var(--seiboku);
+  --accion-hover: color-mix(in oklab, var(--seiboku) 80%, var(--shuboku));
+
+  /* Tipografía: mincho japonesa (latín + subconjunto japonés) y gótica de diseño universal */
+  --f-display: var(--font-shippori-mincho), var(--font-shippori-ja), serif;
+  --f-texto: var(--font-biz-udpgothic), sans-serif;
+  /* Escala de cuarta (1,333). Fluidos solo los titulares, con extremos en rem */
+  --t--1: 0.875rem;
+  --t-0: 1.0625rem;
+  --t-1: clamp(1.25rem, 1.15rem + 0.4vw, 1.4167rem);
+  --t-2: clamp(1.5rem, 1.25rem + 1vw, 1.889rem);
+  --t-3: clamp(2rem, 1.6rem + 1.6vw, 2.52rem);
+  --t-4: clamp(2rem, 1.35rem + 2.7vw, 3.75rem);
+
+  /* Espaciado, márgenes, radios, duraciones */
+  --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
+  --margen: clamp(1rem, 4vw, 3rem);
+  --radio: 0; /* papel cortado: sin esquinas redondeadas */
+  --d-rapida: 120ms;
+  --d-media: 220ms;
+}
