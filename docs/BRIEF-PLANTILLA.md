@@ -15,6 +15,7 @@
 ## Parte B — Plan de diseño (lo escribe Claude antes de codificar, máx. 20 líneas)
 - **Referencias:** 1–3 de `REFERENCIAS.md` o del brief, y qué mecanismo se toma de cada una (no su aspecto).
 - **Dirección:** nombre + una frase («Taller de imprenta: tinta, papel grueso, tipos de madera»).
+- **Descartadas:** 2 direcciones alternativas, distintas en tipo, color *y* composición, y por qué no.
 - **Paleta:** 4–6 colores hex con rol (fondo, texto, acento…).
 - **Tipografía:** familia(s), rol de cada una, ratio de escala.
 - **Layout:** concepto + boceto en texto/ASCII de la primera pantalla.
@@ -27,3 +28,4 @@
 - [ ] ¿Repite tipografía o paleta de `REGISTRO-DIRECCIONES.md`?
 - [ ] ¿Las referencias se han adaptado al cliente, o se ha copiado una paleta o pairing tal cual?
 - [ ] ¿Se reconocería el cliente sin ver el logo?
+- [ ] ¿Se parece al look propio de Claude (crema, acento óxido, serif cursiva grande)? Ver `ANTIPATRONES.md`.
