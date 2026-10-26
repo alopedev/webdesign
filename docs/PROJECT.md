@@ -14,7 +14,7 @@ El objetivo no es «una web correcta», sino una web con identidad propia que no
 - Componentes interactivos: `docs/COMPONENTES.md`. Nada del aspecto por defecto de shadcn ni efectos copiados de Aceternity y similares.
 
 ## Cómo trabajas (resumen del protocolo)
-Diseñamos juntos. **Antes de construir nada, elijo cada pieza entre opciones visuales** que me presentas (láminas, esquemas, maquetas, capturas, prototipos), con tu recomendación. En cada punto ◆ no sigues hasta que yo elija, salvo que te diga «decide tú». Cada opción se enseña aplicada sobre lo que ya he elegido.
+Diseñamos juntos. **Antes de construir nada, elijo cada pieza entre opciones visuales** que me presentas en **Design** (el lienzo de claude.ai: una mesa de trabajo por opción, con esquemas, maquetas, capturas y prototipos), con tu recomendación. En cada punto ◆ no sigues hasta que yo elija, salvo que te diga «decide tú». Cada opción se enseña aplicada sobre lo que ya he elegido.
 1. **Entiende el encargo** (máximo 3 preguntas) y apunta lo que solo es del cliente. Usa `docs/BRIEF-PLANTILLA.md`.
 2. ◆ **Idea:** 3 ideas centrales con su boceto.
 3. ◆ **Inspiración:** 4–6 referencias reales con captura, buscadas en las fuentes de `docs/REFERENCIAS.md` (premios, galerías por estilo y el mundo real del tema). Elijo 2–3 o aporto las mías.
@@ -22,7 +22,7 @@ Diseñamos juntos. **Antes de construir nada, elijo cada pieza entre opciones vi
 5. ◆ **Tipografía:** 3 opciones sobre la estructura elegida.
 6. ◆ **Paleta:** 3 paletas sobre estructura y tipografía elegidas.
 7. ◆ **Maquetas** de la primera pantalla y ◆ **prototipos** del momento interactivo, antes de construir el resto.
-8. **Construye y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`. Compara con las inspiraciones y la maqueta y puntúa del 1 al 10. Si diseño o creatividad no llegan a 8, rehazlo antes de enseñármelo.
+8. ◆ **Construye**, por secciones o por partes grandes según te diga al empezar, **y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`. Compara con las inspiraciones y la maqueta y puntúa del 1 al 10. Si diseño o creatividad no llegan a 8, rehazlo antes de enseñármelo.
 9. ◆ **Correcciones** por rondas hasta que dé la web por buena. Registra lo elegido en `docs/REGISTRO-DIRECCIONES.md`.
 
 ## Reglas fijas
@@ -36,6 +36,6 @@ Diseñamos juntos. **Antes de construir nada, elijo cada pieza entre opciones vi
 
 ## Formato de respuesta
 - Castellano, conciso y claro.
-- En cada ◆, opciones con imágenes y una recomendación. Al final, la web en `sitios/<nombre>/` con las capturas.
+- En cada ◆, opciones en Design y una recomendación. Al final, la web en `sitios/<nombre>/` con las capturas.
 - Lenguaje sencillo, sin jerga técnica: si un término es inevitable, explícalo en una frase. Las decisiones, por lo que cambian para mí (aspecto, velocidad, mantenimiento).
 - Al final, 2–3 líneas: qué decisión es la más arriesgada y por qué, con una pregunta concreta para mí.
