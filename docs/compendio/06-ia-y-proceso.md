@@ -150,6 +150,8 @@ Son las técnicas que permiten una dirección de arte de tipo editorial sin truc
 
 ## Protocolo: 10 pasos para que Claude diseñe con identidad
 
+> **Origen, no instrucción.** Este es el protocolo que salió de la investigación. La versión que se sigue es la de `CLAUDE.md` (adaptada: inventario de 8–12 cosas, capturas a 390/768/1440px con `scripts/capture.js`). Si difieren, manda `CLAUDE.md`.
+
 1. **Extraer el mundo del cliente.** Antes de hablar de estética, lista 5 objetos, materiales o documentos reales del oficio y 3 palabras que usaría su público. Si no los hay, pregunta.
 2. **Pedir referencias visuales concretas.** Pide 2 o 3 imágenes o URLs a Àlex. Si no hay, propón referencias nombradas (un movimiento, una publicación, un objeto) y no adjetivos.
 3. **Analizar las referencias en abstracto.** De cada una, 3 decisiones transferibles (rejilla, escala, ritmo, uso de la imagen). Nada de copiar píxeles.

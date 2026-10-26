@@ -7,7 +7,7 @@ Cada decisión (color, letra, layout) sale del mundo del cliente: su oficio, su 
 - **Inventario:** antes de diseñar, apunta 8–12 cosas que solo pertenecen a este cliente: nombre, lugar, materiales, cifras, rituales, objetos impresos.
 - **Idea central:** completa la frase «En esta página, *[algo propio del cliente]* se convierte en *[el recurso de la dirección elegida]*».
 - **Test del competidor:** si cambias el cliente por su competidor más cercano y la frase sigue funcionando, la idea es genérica. Rehazla.
-- Abre la página con ese elemento, mejor si es el objeto real del oficio y se puede tocar: un abanico de muestras que se despliega en una web de pintura, la bolsa de producto con su ficha técnica en una de café.
+- Abre la página con ese elemento, mejor si es el objeto real del oficio y se puede tocar: un abanico de muestras que se despliega en una web de pintura, la bolsa de producto con su ficha técnica en una de café. (Son ejemplos del mecanismo, no estilos que copiar.)
 
 *Por qué:* sin contexto, un modelo converge hacia la media de lo que ha visto. El contexto es lo que lo saca de ahí.
 
@@ -22,21 +22,21 @@ La audacia va en la forma (composición, tipografía, color). La navegación, lo
 
 ## 4. Tipografía con criterio
 - Una familia, o dos claramente distintas (p. ej. display expresiva + texto neutra). Máximo dos.
-- Pocos tamaños visibles (2–3) y uno muy grande. Escala con ratio fijo en variables CSS.
+- Escala completa con ratio fijo en variables CSS (cada paso con un rol). En cada pantalla se ven pocos tamaños a la vez (2–3), y uno muy grande.
 - Titulares en 2 líneas como máximo a cualquier ancho; display con tracking negativo (−0,02 a −0,05em).
 - Texto de 16–20px y 45–75 caracteres por línea (`max-inline-size: 66ch`). Interlineado 1,4–1,5 en texto y ~1,05–1,1 en titulares.
 - Escala fluida tipo Utopia: `clamp()` con extremos en `rem`, el máximo como mucho ~2,5× el mínimo. Fluidos los titulares; el cuerpo casi fijo. Nunca tamaños solo en `vw` (rompen el zoom).
 - `text-wrap: balance` en titulares y `text-wrap: pretty` en párrafos (mejora progresiva).
 - Para elegir pairing, busca la display en Fonts In Use y mira con qué la combinan en trabajos reales, no en listas de «mejores pares».
 - Alineación a la izquierda por defecto; como mucho un momento centrado.
-- Un pairing que funciona: serif display pequeña (o cursiva) encima de una sans muy grande y pesada.
+- Un pairing que funciona (ejemplo, no receta): serif display pequeña (o cursiva) encima de una sans muy grande y pesada.
 
 ## 5. Color: fondo, tinta y acento
 - Base mínima: un fondo, una tinta y un acento. El acento va en la acción principal y quizá en un elemento más. Amplía hasta 4–6 colores con rol fijo, en variables CSS.
 - Un color dominante y un acento afilado rinden más que una paleta repartida a partes iguales. Llevado al extremo, un solo color + negro aplicado con disciplina ya es una identidad.
 - Neutros tintados: el negro y los grises llevan un ligero tono (lila, café, azul noche) en una escala de 6 pasos. Separa superficies con pequeños saltos de tono.
 - Sobre fondos de color, el texto secundario es un tono del propio fondo, no gris.
-- Define la paleta en OKLCH. Elige a ojo la base y los extremos; deriva los estados (hover, activo, fondos suaves) con `oklch(from …)` o `color-mix(in oklab, …)`, y el modo oscuro con `light-dark()`.
+- Define la paleta en OKLCH en el código (el hex sirve para comunicarla en el plan). Elige a ojo la base y los extremos; deriva los estados (hover, activo, fondos suaves) con `oklch(from …)` o `color-mix(in oklab, …)`, y el modo oscuro con `light-dark()`.
 - Asigna a cada paso de la escala un rol fijo (fondo, borde, texto suave, texto) para que los pares ya cumplan contraste sin medirlos uno a uno.
 - Pon nombre a los colores («Redline», «Tomato Leaf»), no solo hex: ayuda a decidir y a contar la marca.
 - Inspiración válida: temas de editores de código, movimientos artísticos, el material real del cliente (madera, papel, acero, tinta…).
