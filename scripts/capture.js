@@ -1,6 +1,6 @@
 // Verificación visual de una página: capturas + comprobaciones automáticas.
 // Uso:
-//   node scripts/capture.js sitios/<nombre> [--rutas=/,/contacto] [--salida=carpeta]
+//   node scripts/capture.js sitios/<nombre> [--rutas=/,/contacto] [--salida=carpeta] [--espera=ms]
 //     Sitio Next.js: ejecuta `npm run build` (incluye la comprobación de tipos),
 //     arranca `next start` en un puerto libre y captura el resultado de producción.
 //   node scripts/capture.js http://localhost:3000 [--rutas=…] [--salida=…]
@@ -140,7 +140,7 @@ async function target(arg, outArg) {
       const res = await page.goto(t.base + route, { waitUntil: 'networkidle' });
       if (!res || !res.ok()) warnings.add(`${where(w)}: la página responde ${res ? res.status() : 'sin respuesta'}`);
       await page.evaluate(() => document.fonts.ready);
-      await page.waitForTimeout(1200); // deja terminar la entrada orquestada
+      await page.waitForTimeout(Number(opt('espera')) || 1200); // deja terminar la entrada orquestada (--espera=ms si dura más)
 
       const extra = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
       if (extra > 0) warnings.add(`${where(w)}: scroll horizontal de ${extra}px`);

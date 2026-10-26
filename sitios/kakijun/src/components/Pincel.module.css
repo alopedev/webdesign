@@ -1,0 +1,226 @@
+/* ——— Mesa: titular y formulario (columna izquierda) ——— */
+.mesa {
+  grid-column: content-start / 8;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--s-3);
+  min-block-size: 100svh;
+  padding-block: var(--s-5) var(--s-4);
+}
+
+.formulario { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-1); max-inline-size: 34rem; margin-block-start: var(--s-2); }
+.etiqueta { font-size: var(--t--1); font-weight: 700; color: var(--tinta-suave); }
+.linea { display: flex; align-items: end; gap: var(--s-2); }
+.campo {
+  flex: 1;
+  min-inline-size: 0;
+  font-family: var(--f-display);
+  font-size: var(--t-3);
+  font-weight: 500;
+  line-height: 1.2;
+  padding-block: 0.15em 0.2em;
+  background: transparent;
+  border: 0;
+  border-block-end: 2px solid var(--tinta);
+  border-radius: var(--radio);
+}
+.campo::placeholder { color: var(--tinta-suave); opacity: 1; }
+.campo:focus-visible { outline-offset: 6px; }
+.trazar {
+  min-block-size: 3rem;
+  padding: 0.6em 1.4em;
+  font-weight: 700;
+  color: var(--hanshi);
+  background: var(--accion);
+  border: 0;
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: background-color var(--d-rapida) ease-out, transform var(--d-rapida) ease-out;
+}
+.trazar:active { transform: translateY(1px); }
+@media (hover: hover) and (pointer: fine) {
+  .trazar:hover { background: var(--accion-hover); }
+}
+.aviso { min-block-size: 1.5em; font-size: var(--t--1); color: var(--tinta); }
+.aviso:empty { min-block-size: 0; }
+
+.ejemplos { color: var(--tinta-suave); }
+.enlace {
+  padding: 0.25em 0;
+  color: var(--tinta);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .enlace:hover { text-decoration-thickness: 2px; }
+}
+
+/* ——— Fieltro (下敷き) y hoja de práctica (半紙) ——— */
+.fieltro {
+  grid-column: 8 / full-end;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-3);
+  padding: var(--s-4) var(--margen);
+  color: var(--shitajiki-tinta);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.88  0 0 0 0 1  0 0 0 0.09 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23f)'/%3E%3C/svg%3E"),
+    var(--shitajiki);
+}
+.fieltro :focus-visible { outline-color: var(--hanshi); }
+
+.hoja {
+  position: relative;
+  inline-size: min(calc(min(80svh, 52rem) * 242 / 333), calc(100% - 3rem), 34rem);
+  aspect-ratio: 242 / 333;
+  margin-inline-end: 3rem; /* sitio para la lectura en vertical */
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02 0.35' numOctaves='4' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.6  0 0 0 0 0.62  0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='320' height='320' filter='url(%23f)'/%3E%3C/svg%3E"),
+    var(--hanshi);
+  box-shadow: 0 1px 0 oklch(0% 0 0 / 0.25), 0 18px 40px -24px oklch(0% 0 0 / 0.6);
+}
+
+/* Dobleces: el alumno dobla la hoja para centrar cada carácter en su casilla */
+.pliegues {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, transparent calc(50% - 0.5px), var(--pliegue) calc(50% - 0.5px) calc(50% + 0.5px), transparent calc(50% + 0.5px)),
+    repeating-linear-gradient(to bottom, transparent 0 calc(100% / var(--filas) - 1px), var(--pliegue) calc(100% / var(--filas) - 1px) calc(100% / var(--filas)));
+}
+
+.casillas {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--filas), 1fr);
+  place-items: center;
+  container-type: size;
+}
+.caracter {
+  inline-size: calc(min(100cqi / var(--cols), 100cqb / var(--filas)) * 0.88);
+  block-size: auto;
+  overflow: visible;
+}
+.tinta { fill: var(--seiboku); filter: url(#sumi); }
+.nijimi { fill: var(--tanboku); fill-opacity: 0.4; filter: url(#nijimi); mix-blend-mode: multiply; }
+.numeros text {
+  font: 700 7.5px var(--f-texto);
+  fill: var(--shuboku);
+  paint-order: stroke;
+  stroke: var(--hanshi);
+  stroke-width: 2.4px;
+  stroke-linejoin: round;
+}
+
+/* La palabra española, deshaciéndose como aguada sobre la hoja */
+.aguada {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  font-family: var(--f-display);
+  font-size: var(--t-4);
+  font-weight: 500;
+  color: var(--tanboku);
+}
+.aguada > * { grid-area: 1 / 1; opacity: 0; }
+.difusa { filter: blur(10px); }
+
+.lectura {
+  position: absolute;
+  top: 4%;
+  left: calc(100% + 0.6rem); /* físicos: en vertical, «inline» apunta hacia abajo */
+  writing-mode: vertical-rl;
+  font-size: var(--t-2);
+  letter-spacing: 0.25em;
+  color: var(--hanshi);
+}
+
+.pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-1) var(--s-3);
+  inline-size: min(calc(min(80svh, 52rem) * 242 / 333), calc(100% - 3rem), 34rem);
+  margin-inline-end: 3rem;
+}
+.pie p { flex: 1 1 14rem; }
+.ja { font-size: var(--t-2); color: var(--hanshi); }
+.romaji { font-family: var(--f-texto); font-weight: 700; color: var(--hanshi); }
+.repetir {
+  min-block-size: 2.75rem;
+  padding: 0;
+  color: var(--hanshi);
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .repetir:hover { text-decoration-thickness: 2px; }
+}
+
+/* ——— Diccionario de muestra ——— */
+.diccionario {
+  display: grid;
+  gap: var(--s-2);
+  padding-block: var(--s-6) var(--s-5);
+}
+.diccionario h2 { font-size: var(--t-3); }
+.nota { color: var(--tinta-suave); }
+.lista {
+  list-style: none;
+  padding: 0;
+  margin-block-start: var(--s-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  column-gap: var(--s-4);
+}
+.entrada {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-2);
+  inline-size: 100%;
+  min-block-size: 3rem;
+  padding: var(--s-1) 0;
+  text-align: start;
+  background: none;
+  border: 0;
+  border-block-end: 1px solid var(--pliegue);
+  cursor: pointer;
+}
+.es { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.jaLista { font-size: var(--t-2); line-height: 1; white-space: nowrap; }
+.entrada[aria-pressed='true'] .es { font-weight: 700; text-decoration: none; }
+.entrada[aria-pressed='true'] .jaLista { color: var(--shuboku); }
+@media (hover: hover) and (pointer: fine) {
+  .entrada:hover .es { text-decoration-thickness: 2px; }
+}
+
+/* ——— Al encoger: la hoja pasa debajo del formulario, a sangre ——— */
+@media (width < 60rem) {
+  .mesa { grid-column: content; min-block-size: 0; padding-block: var(--s-3) var(--s-4); }
+  .fieltro { grid-column: full; grid-row: 2; padding-block: var(--s-4); }
+  .hoja, .pie { inline-size: min(calc(100% - 3rem), 26rem); }
+}
+
+/* Objetivos táctiles de 44px en pantallas táctiles */
+@media (pointer: coarse) {
+  .enlace { padding-block: 0.7em; }
+}

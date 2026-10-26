@@ -5,7 +5,7 @@ Sin dependencias propias: usan Node (20.9 o más, lo pide Next.js) y Playwright,
 | Script | Para qué | Uso |
 |---|---|---|
 | `fonts.js` | Descargar fuentes de Google Fonts para autoalojarlas (solo latin) y generar `src/app/fuentes.ts` con `next/font/local` | `node scripts/fonts.js sitios/<nombre> "Familia:wght@400;700"` |
-| `capture.js` | `npm run build` + `next start` + capturas a 390, 768 y 1440px de cada ruta + avisos de build, rutas que no responden, scroll horizontal, h1 de más de 2 líneas, contraste AA y errores de consola | `node scripts/capture.js sitios/<nombre> --rutas=/,/contacto` |
+| `capture.js` | `npm run build` + `next start` + capturas a 390, 768 y 1440px de cada ruta + avisos de build, rutas que no responden, scroll horizontal, h1 de más de 2 líneas, contraste AA y errores de consola | `node scripts/capture.js sitios/<nombre> --rutas=/,/contacto` (`--espera=4000` si la entrada animada dura más de 1,2 s) |
 | `serve.js` | Servidor estático mínimo. Lo usa `capture.js` para páginas HTML sueltas (webs anteriores al cambio a Next.js) | `node scripts/serve.js <carpeta>` |
 
 ## Notas
