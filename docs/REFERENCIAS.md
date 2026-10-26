@@ -96,7 +96,43 @@ Mecanismo: el color se presenta con **nombre + foto del material** de donde sale
 | **Atticosoap & PJ Ceramiche** (póster de evento) | Objetos recortados sobre blanco + grotesca grande arriba y abajo; datos del evento en bloque compacto | Eventos, estudios, artesanía | El recorte de objetos exige fotos de calidad |
 | **Iconos Platen, DayCity, tone, Pool** | Textura material en lo digital: papel y máquina de escribir, semitono, isometría translúcida, agua | Momentos de marca, ilustración, favicons | Textura en textos largos cansa; solo en piezas puntuales |
 
-### Galerías para buscar más (mirar el mecanismo, no copiar)
+### Galerías de inspiración (mirar el mecanismo, no copiar)
+Para buscar ideas cuando haga falta. Elige la galería según lo que busques, no la de siempre.
+Comprobadas el 26/10/2026: abren y tienen contenido publicado en 2026, salvo que la nota diga otra cosa.
+
+**Premios y lo más alto del sector** (para ver el techo; ojo, tienden a premiar el efecto por encima del uso)
+| Web | Para qué sirve | Nota |
+|---|---|---|
+| [awwwards.com](https://www.awwwards.com) | Premios diarios con jurado y puntuación por diseño, usabilidad y creatividad. La referencia del sector | La propuso Àlex. Desde aquí devolvió error 502; no pude comprobar si está activa |
+| [thefwa.com](https://thefwa.com) | Premios FWA, los más veteranos. Webs experimentales, WebGL, campañas | |
+| [cssdesignawards.com](https://cssdesignawards.com) | Premios del día, UI y UX votados por un jurado de +200 diseñadores | |
+| [cssnectar.com](https://cssnectar.com) | Galería con premios diarios, muy actualizada | |
+
+**Galerías curadas por estilo**
+| Web | Para qué sirve | Nota |
+|---|---|---|
+| [bestwebsite.gallery](https://bestwebsite.gallery) | Capturas de página completa, muy actualizada. Ver la composición entera de arriba abajo | De David Hellmann |
+| [admiretheweb.com](https://admiretheweb.com) | Selección diaria de webs limpias, minimalistas y responsive | |
+| [minimal.gallery](https://minimal.gallery) | Webs minimalistas escogidas a mano | Para direcciones sobrias |
+| [hoverstat.es](https://www.hoverstat.es) | Diseño web alternativo y experimental | Para salir de lo convencional |
+| [curated.design](https://curated.design) | Webs y landings reales, revisadas una a una, con filtro por estilo o sector | |
+| [darkmodedesign.com](https://www.darkmodedesign.com) | Solo webs oscuras | Útil con las escalas de neutros tintados (§2) |
+
+**Por tipo de página o pieza**
+| Web | Para qué sirve | Nota |
+|---|---|---|
+| [onepagelove.com](https://onepagelove.com) | Webs de una sola página | Encaja con el stack por defecto (un HTML) |
+| [saaslandingpage.com](https://saaslandingpage.com) | Landings de producto digital, por secciones | Para ver estructura; ojo con el cliché SaaS de `ANTIPATRONES.md` |
+| [navbar.gallery](https://www.navbar.gallery) | Solo menús de navegación | Hermana: [footer.design](https://www.footer.design) (pies de página) |
+| [mobbin.com](https://mobbin.com) | +621.000 capturas buscables de apps y webs reales | Puede pedir cuenta o plan de pago para ver más |
+
+**Tipografía en uso**
+| Web | Para qué sirve | Nota |
+|---|---|---|
+| [fontsinuse.com](https://fontsinuse.com) | Archivo de fuentes usadas en proyectos reales (web, impreso, marca) | Buscar una fuente y ver cómo la usan otros |
+| [typewolf.com](https://www.typewolf.com) | Fuentes y pairings vistos en webs reales, con recomendaciones | |
+
+**Más galerías ya vistas en los posts**
 | Web | Qué tiene | Nota |
 |---|---|---|
 | [godly.website](https://godly.website) | Webs premiadas | Ahora redirige a recent.design |
