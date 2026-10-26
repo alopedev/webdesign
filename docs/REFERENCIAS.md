@@ -103,10 +103,12 @@ Comprobadas el 26/10/2026: abren y tienen contenido publicado en 2026, salvo que
 **Premios y lo más alto del sector** (para ver el techo; ojo, tienden a premiar el efecto por encima del uso)
 | Web | Para qué sirve | Nota |
 |---|---|---|
-| [awwwards.com](https://www.awwwards.com) | Premios diarios con jurado y puntuación por diseño, usabilidad y creatividad. La referencia del sector | La propuso Àlex. Desde aquí devolvió error 502; no pude comprobar si está activa |
+| [awwwards.com](https://www.awwwards.com) | Premios diarios con jurado y puntuación por diseño, usabilidad y creatividad. La referencia del sector | La propuso Àlex. Activa: Site of the Day diario (A24, 26/10/2026). Bloquea curl y navegador headless; Claude la consulta con WebFetch (ver nota abajo) |
 | [thefwa.com](https://thefwa.com) | Premios FWA, los más veteranos. Webs experimentales, WebGL, campañas | |
 | [cssdesignawards.com](https://cssdesignawards.com) | Premios del día, UI y UX votados por un jurado de +200 diseñadores | |
 | [cssnectar.com](https://cssnectar.com) | Galería con premios diarios, muy actualizada | |
+
+> **Cómo consulta Claude las galerías.** Algunas (Awwwards, Typewolf) cortan la conexión a `curl` o al navegador sin interfaz del entorno en la nube. Usar la herramienta **WebFetch**, que entra desde otra red: p. ej. `https://www.awwwards.com/websites/` para los Site of the Day o `https://www.awwwards.com/websites/<categoría>/` para filtrar. Si también falla (pasa con lapa.ninja y maxibestof.one, que dan 403 a todo), pedir a Àlex capturas o enlaces concretos.
 
 **Galerías curadas por estilo**
 | Web | Para qué sirve | Nota |
