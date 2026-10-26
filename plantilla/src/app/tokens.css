@@ -1,0 +1,30 @@
+/* Tokens del plan (Parte B del brief). Todos los valores salen de aquí.
+   Los valores de partida son grises neutros a propósito: sustitúyelos todos
+   antes de construir. Si alguno sigue así al entregar, es un valor por defecto. */
+:root {
+  /* Color: fondo, tinta y acento, con nombre ligado al cliente */
+  --fondo: oklch(97% 0 0);
+  --superficie: oklch(93% 0 0);
+  --borde: oklch(80% 0 0);
+  --tinta-suave: oklch(40% 0 0);
+  --tinta: oklch(20% 0 0);
+  --acento: oklch(45% 0 0);
+  --acento-hover: oklch(from var(--acento) calc(l - 0.05) c h);
+
+  /* Tipografía: máx. 2 familias, autoalojadas con next/font/local (src/app/fuentes.ts).
+     Cada fuente expone su variable (--font-…): úsala aquí. */
+  --f-display: serif; /* p. ej. var(--font-fraunces), serif */
+  --f-texto: sans-serif;
+  /* Escala con ratio fijo; fluidos solo los titulares */
+  --t-0: 1.0625rem;
+  --t-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --t-2: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem);
+  --t-3: clamp(2.25rem, 1.4rem + 4vw, 5rem);
+
+  /* Espaciado, márgenes, radios, duraciones */
+  --s-1: 0.5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
+  --margen: clamp(1rem, 4vw, 3rem);
+  --radio: 0;
+  --d-rapida: 120ms;
+  --d-media: 220ms;
+}

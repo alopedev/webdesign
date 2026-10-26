@@ -31,6 +31,8 @@ Si el plan o la web contiene algo de la columna izquierda **sin una razón ligad
 | Fila de tarjetas idénticas con icono en cuadrado redondeado encima | Composición distinta por sección; listas, tablas o texto cuando no hace falta tarjeta |
 | Tarjetas dentro de tarjetas, todo envuelto en tarjetas | Separar con espacio y saltos de tono |
 | Paneles de cristal/desenfoque, navegación flotante en píldora | Superficies sólidas, navegación anclada |
+| Aspecto por defecto de shadcn/ui (grises neutros, radio medio, borde fino, sombra suave) | Primitiva sin estilo (Base UI) con los tokens del plan; ver `COMPONENTES.md` |
+| Efectos pegados de Aceternity, Magic UI o React Bits (auroras, focos, botones con destello, bento grid) | El mecanismo rehecho con el material del cliente, gastado en el momento audaz |
 | Manchas decorativas, emojis, dashboards falsos | Imagen real, gráfico dibujado a partir del tema, o solo tipografía y color |
 | Filetes finos y sombras en todo | Bordes y sombras solo donde transmiten estado o jerarquía |
 | Secuencia fija hero → 3 features → testimonios → CTA | Orden que sale del contenido real |
@@ -52,6 +54,7 @@ Si el plan o la web contiene algo de la columna izquierda **sin una razón ligad
 | Contenido que parte de `opacity: 0` en el CSS y depende de JS para verse | Contenido visible en el HTML; el script añade la animación |
 | Aparecer desde `scale(0)` | Desde `scale(0.95)` con `transform-origin` en el disparador |
 | Rebote o easing elástico | `ease-out` firme (principio 7) |
+| Scroll suave, parallax y texto que entra por letras en toda la web «porque es tipo Awwwards» | Un momento audaz con GSAP; el resto con movimiento discreto. Lenis solo si el plan lo pide |
 | `ease-in` en entradas | `ease-out` |
 
 ## Contenido
