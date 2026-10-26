@@ -8,8 +8,8 @@ Idioma de trabajo: castellano. Respuestas concisas.
 @docs/ANTIPATRONES.md
 
 Leer solo cuando haga falta (no se importan para ahorrar contexto):
-- `docs/BRIEF-PLANTILLA.md` — al empezar una web nueva (pasos 1–5).
-- `docs/REGISTRO-DIRECCIONES.md` — antes de elegir dirección, y para añadir la nueva al acabar.
+- `docs/BRIEF-PLANTILLA.md` — al empezar una web nueva (pasos 1–8).
+- `docs/REGISTRO-DIRECCIONES.md` — antes de preparar opciones, y para añadir la nueva al acabar.
 - `docs/REFERENCIAS.md` — biblioteca de fuentes, paletas, webs y herramientas; al buscar referencias.
 - `docs/CHECKLIST-CALIDAD.md` — antes de dar una web por terminada.
 - `docs/COMPONENTES.md` — al planificar componentes interactivos (menús, diálogos, pestañas…): HTML nativo, primitivas sin estilo y qué hacer con shadcn y similares.
@@ -17,20 +17,32 @@ Leer solo cuando haga falta (no se importan para ahorrar contexto):
 - `docs/compendio/` — investigación a fondo por áreas; para resolver dudas de un área. Es fondo, no tiene pasos propios: **el protocolo es el de abajo**.
 
 ## Protocolo de cada web (única fuente)
-Àlex forma parte del proceso creativo: elige en los cinco puntos marcados con ◆. En cada uno, Claude presenta las opciones con imágenes y una recomendación (tarjeta de decisión) y **no avanza hasta que Àlex elige**. Solo se salta un ◆ si Àlex dice «decide tú» para ese punto. Mientras espera, no construye nada que dependa de la elección. Cada elección queda escrita en `sitios/<nombre>/PLAN.md`.
+Àlex diseña junto a Claude: **cada pieza se elige entre opciones visuales antes de construir nada**. En cada punto ◆, Claude presenta 2–4 opciones con imágenes (láminas, esquemas, maquetas, capturas o vídeo) y una recomendación con su motivo (tarjeta de decisión), y **no avanza hasta que Àlex elige**. Solo se salta un ◆ si Àlex dice «decide tú» para ese punto. Mientras espera, no prepara nada que dependa de la elección. Cada elección (y lo descartado) queda escrita en `sitios/<nombre>/PLAN.md`.
 
+**Cómo se presentan las opciones.** Cada opción es una lámina: una página HTML estática en `sitios/<nombre>/opciones/<paso>/` capturada con `capture.js`, o capturas de webs reales. Las opciones de cada ◆ se aplican sobre lo ya elegido (la tipografía se enseña sobre la estructura elegida; la paleta, sobre estructura y tipografía), para que Àlex vea cómo queda junto y no piezas sueltas. Las opciones de un mismo ◆ son de verdad distintas: la primera que se ocurra entra como una más, nunca como la recomendada por defecto, y ninguna se parece al look propio de Claude ni a las 5 últimas entradas de `REGISTRO-DIRECCIONES.md`.
+
+### Fase 1 — Entender (Claude)
 1. **Brief.** Rellenar la Parte A de `BRIEF-PLANTILLA.md`. Si falta propósito, público o contenido real, preguntar antes de diseñar (máx. 3 preguntas).
 2. **Mundo del cliente.** Inventario de 8–12 cosas que solo son suyas (objetos, materiales, documentos, cifras, rituales, lugar) + 3 palabras que usaría su público.
-3. ◆ **Inspiraciones.** Buscar de verdad, con capturas, en varias fuentes de `REFERENCIAS.md`: al menos una galería de premios (Awwwards, FWA, CSS Design Awards…), una curada por estilo (bestwebsite.gallery, hoverstat.es, curated.design…), Fonts In Use para la letra, y el mundo real del tema (obras, objetos e impresos del oficio, no webs). Las referencias no se inventan ni se escriben de memoria. Proponer 4–6, cada una con captura y el mecanismo que se tomaría (rejilla, escala, ritmo, uso de la imagen), nunca su aspecto. Àlex elige 2–3 o aporta las suyas.
-4. ◆ **Idea y dirección: tres direcciones divergentes**, cada una con su idea central, distintas en tipografía, color *y* composición. De cada una: 5 líneas + una lámina (muestra de tipografía, paleta con nombres y boceto de la primera pantalla). La primera que se ocurra entra como una de las tres. Antes de enseñarlas, descartar y sustituir la que se parezca al look propio de Claude, a las 5 últimas entradas de `REGISTRO-DIRECCIONES.md` o a la web anterior. Àlex elige una, o una mezcla.
-5. **Plan.** Escribir la Parte B del brief con la dirección elegida, la idea central y el test del competidor por escrito. Revisarlo contra `ANTIPATRONES.md` (Parte C) y cambiar todo lo que sea un valor por defecto sin razón ligada al brief.
-6. ◆ **Maquetas.** 2–3 maquetas estáticas de la primera pantalla (sin animación), que varíen composición y momento audaz dentro de la dirección. Se hacen como rutas del sitio (`/maquetas/a`, `/b`…) y se capturan con `capture.js`. Àlex elige una y dice qué cambiar.
-7. ◆ **Prototipos.** Si la web tiene interacción o animación protagonista (lo normal en una web de nivel premio), se prototipa antes de construir el resto: 2 prototipos de solo ese momento (por ejemplo, dos formas de entrar o de responder al gesto), con un vídeo corto o capturas en secuencia. Àlex elige. Si no la tiene, se dice y se salta.
-8. **Construir** en `sitios/<nombre>/` a partir de `plantilla/` (ver Stack), con contenido real o de muestra marcado como tal, dimensionando con los textos más largos. Lo primero, `src/app/tokens.css` con los valores del plan y `scripts/fonts.js` con sus fuentes.
-9. **Verificar:** `node scripts/capture.js sitios/<nombre> --rutas=/,…` (hace el build, arranca la versión de producción y captura cada ruta). Mirar las capturas, arreglar los 3 problemas más graves y repetir (máx. 3 rondas). El script debe acabar sin avisos o con cada aviso justificado. Después, `CHECKLIST-CALIDAD.md`. Pasar las comprobaciones es el suelo, no la meta.
-   **Juicio estético antes de enseñar nada:** poner las capturas al lado de las inspiraciones elegidas y de `PRINCIPIOS-ESTILO.md` y puntuar del 1 al 10, con sinceridad, diseño, creatividad, facilidad de uso y contenido (los criterios de los premios). Si diseño o creatividad no llegan a 8, no se enseña: se dice qué falla y se rehace.
-10. ◆ **Correcciones con Àlex:** enseñar las capturas y la decisión más arriesgada con una pregunta concreta. Aplicar sus correcciones por rondas hasta que dé la web por buena.
-11. **Registrar** la dirección en `REGISTRO-DIRECCIONES.md`, con lo que Àlex eligió y descartó en cada ◆.
+
+### Fase 2 — Elegir juntos (sin construir la web)
+3. ◆ **Idea.** 3 ideas centrales: qué experiencia vive el visitante y qué la hace única. Cada una con su frase («En esta página, *[algo del cliente]* se convierte en *[recurso]*»), el test del competidor escrito y un boceto o secuencia de 3–4 viñetas.
+4. ◆ **Inspiración.** Buscar de verdad, con capturas, en varias fuentes de `REFERENCIAS.md`: al menos una galería de premios (Awwwards, FWA, CSS Design Awards…), una curada por estilo (bestwebsite.gallery, hoverstat.es, curated.design…) y el mundo real del tema (obras, objetos, impresos del oficio). Nunca de memoria ni inventadas. 4–6 referencias, cada una con el mecanismo que se tomaría (rejilla, escala, ritmo, uso de la imagen, interacción). Àlex elige 2–3 o aporta las suyas.
+5. ◆ **Estructura.** 2–3 esquemas en gris de la página completa: orden de secciones, rejilla, qué ocupa la primera pantalla, y cómo se reordena a 390px. Sin color ni tipografía final.
+6. ◆ **Tipografía.** 3 opciones (máx. 2 familias cada una, buscadas en Fonts In Use y `REFERENCIAS.md`), con muestra de la escala y aplicadas a la primera pantalla de la estructura elegida, con textos reales.
+7. ◆ **Paleta.** 3 paletas de 4–6 colores con nombre y rol, aplicadas sobre estructura y tipografía elegidas, con el contraste medido.
+
+### Fase 3 — Dar forma
+8. **Plan.** Escribir la Parte B del brief con todo lo elegido. Revisarlo contra `ANTIPATRONES.md` (Parte C) y señalar a Àlex cualquier choque (por ejemplo, una paleta y una tipografía que juntas recuerdan a un cliché) antes de seguir.
+9. ◆ **Maquetas.** 2–3 maquetas estáticas de la primera pantalla que combinan lo elegido y varían el momento audaz. Se hacen como rutas del sitio (`/maquetas/a`, `/b`…) y se capturan con `capture.js`. Àlex elige una y dice qué cambiar.
+10. ◆ **Prototipos.** Si la web tiene interacción o animación protagonista (lo normal en una web de nivel premio), 2 prototipos de solo ese momento, con un vídeo corto o capturas en secuencia, antes de construir el resto. Àlex elige. Si no la tiene, se dice y se salta.
+
+### Fase 4 — Construir y corregir
+11. **Construir** en `sitios/<nombre>/` a partir de `plantilla/` (ver Stack), con contenido real o de muestra marcado como tal, dimensionando con los textos más largos. Lo primero, `src/app/tokens.css` con los valores elegidos y `scripts/fonts.js` con sus fuentes.
+12. **Verificar:** `node scripts/capture.js sitios/<nombre> --rutas=/,…` (hace el build, arranca la versión de producción y captura cada ruta). Mirar las capturas, arreglar los 3 problemas más graves y repetir (máx. 3 rondas). El script debe acabar sin avisos o con cada aviso justificado. Después, `CHECKLIST-CALIDAD.md`. Pasar las comprobaciones es el suelo, no la meta.
+   **Juicio estético antes de enseñar nada:** poner las capturas al lado de las inspiraciones elegidas y de la maqueta aprobada y puntuar del 1 al 10, con sinceridad, diseño, creatividad, facilidad de uso y contenido (los criterios de los premios). Si diseño o creatividad no llegan a 8, no se enseña: se dice qué falla y se rehace.
+13. ◆ **Correcciones con Àlex:** enseñar las capturas y la decisión más arriesgada con una pregunta concreta. Aplicar sus correcciones por rondas hasta que dé la web por buena.
+14. **Registrar** en `REGISTRO-DIRECCIONES.md` lo elegido y lo descartado en cada ◆.
 
 ## Stack por defecto
 - **Next.js (App Router) + React + TypeScript estricto.** Cada web es un proyecto en `sitios/<nombre>/`, copiado de `plantilla/`. Objetivo: webs de nivel Awwwards (una experiencia continua: animación ligada al scroll, transiciones, WebGL si hace falta).

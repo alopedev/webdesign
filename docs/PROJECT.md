@@ -9,25 +9,26 @@ El objetivo no es «una web correcta», sino una web con identidad propia que no
 
 ## Dónde está todo
 - Repo `alopedev/webdesign`. Manda el repo; `/mnt/project-files/docs-base/` es una copia que se mantiene igual.
-- El **protocolo de 11 pasos está en `CLAUDE.md`** y es la única fuente. `docs/compendio/` es investigación de fondo, sin pasos propios.
+- El **protocolo de 14 pasos está en `CLAUDE.md`** y es la única fuente. `docs/compendio/` es investigación de fondo, sin pasos propios.
 - Cada web es un proyecto **Next.js + React + TypeScript** en `sitios/<nombre>/`, copiado de `plantilla/` (con GSAP para animar y Lenis para el scroll suave). Objetivo: webs de nivel Awwwards. Scripts en `scripts/` (fuentes, capturas).
 - Componentes interactivos: `docs/COMPONENTES.md`. Nada del aspecto por defecto de shadcn ni efectos copiados de Aceternity y similares.
 
 ## Cómo trabajas (resumen del protocolo)
-Formo parte del proceso creativo. En cada punto marcado con ◆ me enseñas opciones con imágenes y tu recomendación, y **no sigues hasta que yo elija** (salvo que te diga «decide tú»).
-1. **Entiende el encargo.** Si falta propósito, público, tono o contenido real, pregunta (máximo 3 preguntas). Usa `docs/BRIEF-PLANTILLA.md`.
-2. ◆ **Inspiraciones:** búscalas de verdad en las fuentes de `docs/REFERENCIAS.md` (premios, galerías por estilo, Fonts In Use y el mundo real del tema). Me enseñas 4–6 con captura y qué se tomaría de cada una. Elijo 2–3 o aporto las mías.
-3. ◆ **Idea y dirección:** tres direcciones divergentes, cada una con su idea central y una lámina (tipografía, paleta, boceto). Elijo una o una mezcla.
-4. **Plan** con la dirección elegida, revisado contra `docs/ANTIPATRONES.md`.
-5. ◆ **Maquetas:** 2–3 de la primera pantalla, sin animación. Elijo y corrijo.
-6. ◆ **Prototipos** del momento interactivo o animado, antes de construir el resto. Elijo.
-7. **Construye y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`. Luego compara con las inspiraciones y puntúa del 1 al 10 diseño, creatividad, facilidad de uso y contenido. Si diseño o creatividad no llegan a 8, rehazlo antes de enseñármelo.
-8. ◆ **Correcciones** por rondas hasta que dé la web por buena. Luego registra la dirección en `docs/REGISTRO-DIRECCIONES.md`.
+Diseñamos juntos. **Antes de construir nada, elijo cada pieza entre opciones visuales** que me presentas (láminas, esquemas, maquetas, capturas, prototipos), con tu recomendación. En cada punto ◆ no sigues hasta que yo elija, salvo que te diga «decide tú». Cada opción se enseña aplicada sobre lo que ya he elegido.
+1. **Entiende el encargo** (máximo 3 preguntas) y apunta lo que solo es del cliente. Usa `docs/BRIEF-PLANTILLA.md`.
+2. ◆ **Idea:** 3 ideas centrales con su boceto.
+3. ◆ **Inspiración:** 4–6 referencias reales con captura, buscadas en las fuentes de `docs/REFERENCIAS.md` (premios, galerías por estilo y el mundo real del tema). Elijo 2–3 o aporto las mías.
+4. ◆ **Estructura:** 2–3 esquemas de la página.
+5. ◆ **Tipografía:** 3 opciones sobre la estructura elegida.
+6. ◆ **Paleta:** 3 paletas sobre estructura y tipografía elegidas.
+7. ◆ **Maquetas** de la primera pantalla y ◆ **prototipos** del momento interactivo, antes de construir el resto.
+8. **Construye y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`. Compara con las inspiraciones y la maqueta y puntúa del 1 al 10. Si diseño o creatividad no llegan a 8, rehazlo antes de enseñármelo.
+9. ◆ **Correcciones** por rondas hasta que dé la web por buena. Registra lo elegido en `docs/REGISTRO-DIRECCIONES.md`.
 
 ## Reglas fijas
 - Cada web nace del tema, el público y el propósito, no de una plantilla.
 - Gasta la audacia en un solo sitio. El resto, sobrio y bien ejecutado.
-- La primera idea que se te ocurra es solo una de las tres direcciones, nunca la elegida por defecto.
+- La primera idea que se te ocurra es solo una de las opciones, nunca la recomendada por defecto.
 - Para cada cliché de `ANTIPATRONES.md` hay una alternativa al lado: cada «no» lleva su «sí».
 - Suelo de calidad innegociable: responsive, foco de teclado visible, `prefers-reduced-motion`, contraste WCAG AA medido (no supuesto).
 - Contenido real o verosímil. Nada de lorem ipsum ni testimonios inventados presentados como reales.
