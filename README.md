@@ -14,20 +14,35 @@
 
 ## Por qué está organizado así
 - **Instrucciones cortas, detalle aparte.** La documentación oficial de Claude Code recomienda CLAUDE.md de menos de 200 líneas, concretos y por secciones; lo largo va en archivos separados. Los `@imports` organizan pero no ahorran contexto, por eso solo se importan los dos documentos que se usan siempre.
-- **Plan antes que código.** Es el método de la skill oficial `frontend-design`: plan compacto → revisarlo contra los valores por defecto → construir → autocrítica.
+- **Plan antes que código.** Es el método de la skill oficial `frontend-design` y de `taste-skill`: inventario e idea central → plan → revisarlo contra los valores por defecto → construir → mirar capturas y corregir.
 - **Nombrar los clichés funciona.** El cookbook de Anthropic muestra que decir explícitamente qué evitar (Inter, morado sobre blanco…) da diseños más variados.
 - **Registro de direcciones.** Cada conversación de Claude está aislada, así que «no repitas» no funciona sin memoria. El registro se la da.
 
 ## Riesgos que conviene saber
 - La lista de antipatrones envejece: cuando un «antídoto» se pone de moda se convierte en cliché (pasó con Space Grotesk). Revísala cada pocos meses.
-- Prohibir demasiado también empuja a la uniformidad. Los antipatrones se permiten si el brief los justifica.
-- `CLAUDE.md` tiene comandos de ejemplo: ajústalos cuando exista el repo real.
+- Prohibir demasiado también empuja a la uniformidad. Por eso cada antipatrón lleva su alternativa al lado, y se permite si el brief lo justifica.
+- Las skills de la comunidad no siempre coinciden. Por ejemplo, `taste-skill` prohíbe la monoespaciada fuera del código, y uno de tus posts (.raw coffee) la usa con acierto. Aquí ganan el brief y la idea central.
+- `CLAUDE.md` tiene comandos de ejemplo: ajústalos al repo real.
 
-## Fuentes
-- Anthropic, skill `frontend-design`: https://github.com/anthropics/skills/tree/main/skills/frontend-design
-- Anthropic, cookbook «Prompting for frontend aesthetics» (oct. 2025): https://platform.claude.com/cookbook/coding-prompting-for-frontend-aesthetics
-- Anthropic, «Improving frontend design through Skills» (nov. 2025): https://claude.com/blog/improving-frontend-design-through-skills
+## Alternativa a valorar
+Impeccable, `taste-skill` y las skills de Emil Kowalski se pueden instalar directamente en Claude Code. Traen scripts que comprueban la web automáticamente (detectores de clichés, capturas a varios anchos). Estos documentos recogen sus reglas, pero no esos scripts. Si se instalan junto a estos documentos, hay que vigilar que no se contradigan.
+
+## Fuentes (todas abiertas y leídas el 26/10/2026)
+**Anthropic (oficial)**
+- Skill `frontend-design`: https://github.com/anthropics/skills/tree/main/skills/frontend-design
+- Cookbook «Prompting for frontend aesthetics» (oct. 2025): https://platform.claude.com/cookbook/coding-prompting-for-frontend-aesthetics
+- «Improving frontend design through Skills» (nov. 2025): https://claude.com/blog/improving-frontend-design-through-skills (solo leí un resumen parcial)
 - Claude Code, «How Claude remembers your project»: https://code.claude.com/docs/en/memory
+
+**Autores especializados y skills populares de la comunidad**
+- Paul Bakaus, **Impeccable** (~89k estrellas en GitHub): https://github.com/pbakaus/impeccable. Neutros tintados, nada de texto gris sobre color, tarjetas anidadas ni easing elástico. Solo leí la portada del repo: no encontré el archivo de la skill.
+- Leonxlnx, **taste-skill** (~103k estrellas): https://github.com/Leonxlnx/taste-skill. Inventario del cliente, idea central, test del competidor, cifras tipográficas, verificación con capturas en rondas.
+- Emil Kowalski (ex-Vercel y Linear, autor de Sonner), **skills de animación**: https://github.com/emilkowalski/skills. Frecuencia, curvas, duraciones y reduced-motion.
+- Justin Wetch, «Improving Claude's frontend design skill»: https://www.justinwetch.com/blog/improvingclaudefrontend. Instrucciones posibles en una sola respuesta y cada «evitar» con su alternativa. Lo midió con 30 comparaciones a ciegas, juzgadas por Claude: la versión revisada ganó 21 de 28.
+- Matt Pocock, skill `writing-for-agents`: describe cómo escribir CLAUDE.md. Prohibir algo sin dar la alternativa refuerza lo prohibido.
+
+**Normas técnicas**
 - W3C, WCAG 2.2 SC 1.4.3: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
 - Google, Web Vitals: https://web.dev/articles/vitals
-- Justin Wetch, crítica a la regla «no repetir entre generaciones»: https://www.justinwetch.com/blog/improvingclaudefrontend
+
+**Descartadas:** guías de agencias y blogs de 2026 sobre «Claude Code para diseñadores». Las revisé por encima y eran genéricas, promocionales o sin autor identificable.

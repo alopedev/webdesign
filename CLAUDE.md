@@ -16,10 +16,10 @@ Leer solo cuando haga falta (no se importan para ahorrar contexto):
 ## Flujo obligatorio para cada web
 1. Leer el brief. Si falta propósito, público o contenido, preguntar antes de diseñar.
 2. Leer `REGISTRO-DIRECCIONES.md` y elegir una dirección que NO repita tipografía ni paleta recientes.
-3. Escribir el plan de diseño (máx. 20 líneas): dirección con nombre, 4–6 colores hex con rol, tipografías y escala, concepto de layout, el momento audaz.
+3. Escribir el plan de diseño (máx. 20 líneas): inventario de 8–12 cosas propias del cliente, idea central (y pasa el test del competidor), dirección con nombre, 4–6 colores hex con rol, tipografías y escala, concepto de layout, el momento audaz.
 4. Revisar el plan contra `ANTIPATRONES.md`. Cambiar todo lo que sea un valor por defecto.
 5. Construir.
-6. Verificar visualmente (captura con Playwright a 375px y 1440px) y pasar `CHECKLIST-CALIDAD.md`.
+6. Verificar visualmente: capturas con Playwright a 390, 768 y 1440px, criticarlas, arreglar los 3 problemas más graves y repetir (máximo 3 rondas). Después, pasar `CHECKLIST-CALIDAD.md`.
 7. Añadir una línea al registro.
 
 ## Stack por defecto
@@ -35,10 +35,9 @@ Leer solo cuando haga falta (no se importan para ahorrar contexto):
 - Captura: script de Playwright en `scripts/capture.js` (crear si no existe).
 <!-- Ajustar cuando exista el repo real -->
 
-## Errores que ya hemos visto (no repetir)
-- No uses Inter/Roboto/Arial por inercia; elige por el brief.
-- No uses Space Grotesk «como alternativa original»: también es un valor por defecto.
-- No añadas etiquetas en mayúsculas espaciadas encima de cada título.
-- No pongas flechas «→» al final de cada enlace.
-- No animes todo: una secuencia de entrada bien orquestada vale más que diez microinteracciones.
+## Correcciones ya aprendidas
+- Tipografía elegida desde el brief y distinta de las del registro (Space Grotesk también cuenta como valor por defecto).
+- Títulos de sección directos, sin etiqueta en mayúsculas encima.
+- Enlaces reconocibles por su estilo; flecha solo si indica dirección real.
+- Una entrada orquestada + feedback en las acciones, en vez de animar cada elemento.
 <!-- Añadir aquí cada corrección que Àlex repita dos veces. -->
