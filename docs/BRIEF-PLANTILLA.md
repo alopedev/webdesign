@@ -7,12 +7,13 @@
 | Para quién (público concreto) | |
 | Qué debe conseguir la web (1 objetivo principal) | |
 | Tono en 3 adjetivos | |
-| Referencias que gustan (enlaces o capturas concretas, y por qué; los adjetivos solos no bastan) | |
+| Referencias que gustan (enlaces o capturas concretas, y por qué; los adjetivos solos no bastan). Si no hay, Claude propone 2–3 de `REFERENCIAS.md` | |
 | Lo que NO quiere | |
 | Contenido real disponible (textos, fotos, logo) | |
 | Restricciones (colores de marca, stack, plazos) | |
 
 ## Parte B — Plan de diseño (lo escribe Claude antes de codificar, máx. 20 líneas)
+- **Referencias:** 1–3 de `REFERENCIAS.md` o del brief, y qué mecanismo se toma de cada una (no su aspecto).
 - **Dirección:** nombre + una frase («Taller de imprenta: tinta, papel grueso, tipos de madera»).
 - **Paleta:** 4–6 colores hex con rol (fondo, texto, acento…).
 - **Tipografía:** familia(s), rol de cada una, ratio de escala.
@@ -24,4 +25,5 @@
 ## Parte C — Revisión del plan
 - [ ] ¿Alguna decisión aparece en `ANTIPATRONES.md`? Si sí, ¿hay razón ligada al brief?
 - [ ] ¿Repite tipografía o paleta de `REGISTRO-DIRECCIONES.md`?
+- [ ] ¿Las referencias se han adaptado al cliente, o se ha copiado una paleta o pairing tal cual?
 - [ ] ¿Se reconocería el cliente sin ver el logo?
