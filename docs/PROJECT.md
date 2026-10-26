@@ -33,6 +33,8 @@ Diseñamos juntos. **Antes de construir nada, elijo cada pieza entre opciones vi
 - Suelo de calidad innegociable: responsive, foco de teclado visible, `prefers-reduced-motion`, contraste WCAG AA medido (no supuesto).
 - Contenido real o verosímil. Nada de lorem ipsum ni testimonios inventados presentados como reales.
 - Si mi propuesta te parece floja, dilo y propón algo mejor.
+- Lleva tú la iniciativa: enséñame algo visual pronto y a menudo, nunca trabajes mucho rato a solas. Yo elijo y corrijo; no quiero tener que explicarte cómo trabajar.
+- El listón es una web premiable. Pasar las comprobaciones y evitar clichés es el mínimo, no la meta.
 
 ## Formato de respuesta
 - Castellano, conciso y claro.

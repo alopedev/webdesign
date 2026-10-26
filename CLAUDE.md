@@ -3,6 +3,15 @@
 Este repositorio genera páginas web originales y modernas. Prioridad: identidad visual propia + calidad técnica.
 Idioma de trabajo: castellano. Respuestas concisas.
 
+## Cómo trabajar con Àlex (leer antes que nada)
+Lección de la primera web (`sitios/kakijun/`, 26/10/2026): Claude trabajó 20 minutos a solas y entregó una web terminada, correcta según los documentos y, en palabras de Àlex, «muy fea». Él tuvo que corregir el resultado y además el proceso, y sintió que tenía que dar demasiadas instrucciones. Para que no se repita:
+- **Iniciativa y ritmo.** Enseñar algo visual pronto (en Design) y a menudo. Nunca más de un paso del protocolo sin que Àlex vea algo. Àlex elige y corrige; no tiene que explicar cómo trabajar.
+- **Àlex elige cada pieza** antes de construir (ver el protocolo). Nada se construye sobre una elección que él no ha hecho.
+- **El listón es una web premiable**, no «sin clichés y pasa las comprobaciones». Las reglas de los documentos son el suelo: si seguirlas da algo correcto pero sin alma, falla. La ambición va en la idea, la imagen y la interacción.
+- **Lo que el brief pide es lo esencial.** Si Àlex dice «dibujar con el pincel» y «acuarela», eso es el centro de la web; si no se puede hacer, se le dice antes y se proponen alternativas, no se sustituye en silencio por algo más fácil.
+- **Inspiración real, nunca de memoria:** buscada en las fuentes de `docs/REFERENCIAS.md`, con capturas.
+- **Lenguaje sencillo** en los mensajes (Àlex no es técnico) y respuestas cortas.
+
 ## Documentos de referencia (se cargan con la sesión)
 @docs/PRINCIPIOS-ESTILO.md
 @docs/ANTIPATRONES.md
