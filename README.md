@@ -20,7 +20,7 @@
 
 ## Por qué está organizado así
 - **Instrucciones cortas, detalle aparte.** La documentación oficial de Claude Code recomienda CLAUDE.md de menos de 200 líneas, concretos y por secciones; lo largo va en archivos separados. Los `@imports` organizan pero no ahorran contexto, por eso solo se importan los dos documentos que se usan siempre.
-- **Un solo protocolo.** Está en `CLAUDE.md`. Sale del método de la skill oficial `frontend-design`, de `taste-skill` y del compendio: inventario e idea central → tres direcciones → plan → revisarlo contra los valores por defecto → construir → capturas con `scripts/capture.js` y corregir.
+- **Un solo protocolo.** Está en `CLAUDE.md`. Sale del método de la skill oficial `frontend-design`, de `taste-skill` y del compendio: inventario del cliente → Àlex elige entre opciones visuales la idea, la inspiración, la estructura, la tipografía, la paleta, la maqueta y el prototipo → plan revisado contra los valores por defecto → construir → capturas con `scripts/capture.js`, nota estética y correcciones con Àlex.
 - **Verificar con herramientas, no a ojo.** En la primera prueba, el script de capturas encontró un botón con contraste 4,47:1 que a ojo parecía correcto.
 - **Nombrar los clichés funciona.** El cookbook de Anthropic muestra que decir explícitamente qué evitar (Inter, morado sobre blanco…) da diseños más variados.
 - **Registro de direcciones.** Cada conversación de Claude está aislada, así que «no repitas» no funciona sin memoria. El registro se la da.
