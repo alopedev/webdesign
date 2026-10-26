@@ -123,7 +123,7 @@ Comprobadas el 26/10/2026: abren y tienen contenido publicado en 2026, salvo que
 **Por tipo de página o pieza**
 | Web | Para qué sirve | Nota |
 |---|---|---|
-| [onepagelove.com](https://onepagelove.com) | Webs de una sola página | Encaja con el stack por defecto (un HTML) |
+| [onepagelove.com](https://onepagelove.com) | Webs de una sola página | Útil para estudiar ritmo y orden de secciones en una sola página |
 | [saaslandingpage.com](https://saaslandingpage.com) | Landings de producto digital, por secciones | Para ver estructura; ojo con el cliché SaaS de `ANTIPATRONES.md` |
 | [navbar.gallery](https://www.navbar.gallery) | Solo menús de navegación | Hermana: [footer.design](https://www.footer.design) (pies de página) |
 | [mobbin.com](https://mobbin.com) | +621.000 capturas buscables de apps y webs reales | Puede pedir cuenta o plan de pago para ver más |

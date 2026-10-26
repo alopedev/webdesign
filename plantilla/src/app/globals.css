@@ -1,0 +1,28 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-padding-top: var(--s-4); }
+body {
+  background: var(--fondo);
+  color: var(--tinta);
+  font: 400 var(--t-0) / 1.5 var(--f-texto);
+}
+img, svg, video { display: block; max-inline-size: 100%; block-size: auto; }
+:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--f-display); line-height: 1.1; text-wrap: balance; }
+p { text-wrap: pretty; max-inline-size: 66ch; }
+
+/* Rejilla única con pistas con nombre: full para salir a sangre, content para el resto */
+.rejilla {
+  display: grid;
+  grid-template-columns:
+    [full-start] var(--margen)
+    [content-start] repeat(12, minmax(0, 1fr)) [content-end]
+    var(--margen) [full-end];
+  column-gap: var(--s-2);
+}
+.rejilla > * { grid-column: content; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}

@@ -1,7 +1,7 @@
 # Checklist de calidad (antes de entregar)
 
 ## Automático
-- [ ] `node scripts/capture.js sitios/<nombre>/index.html` termina sin avisos, o cada aviso está justificado en la entrega. Cubre scroll horizontal, h1 de más de 2 líneas, contraste de texto y errores de consola.
+- [ ] `node scripts/capture.js sitios/<nombre> --rutas=…` (todas las rutas) termina sin avisos, o cada aviso está justificado en la entrega. Cubre build y tipos, respuesta de cada ruta, scroll horizontal, h1 de más de 2 líneas, contraste de texto y errores de consola.
 - [ ] He mirado las tres capturas, no solo el informe del script.
 
 ## Diseño
@@ -20,7 +20,8 @@
 - [ ] Objetivos táctiles de 24×24px como mínimo; 44px en móvil.
 - [ ] Con zoom al 200 % el texto crece y nada se corta.
 - [ ] Contraste medido, no redondeado: 4,49:1 no cumple 4,5:1.
-- [ ] Con `prefers-reduced-motion` desaparece el desplazamiento; se conservan los fundidos.
+- [ ] Con `prefers-reduced-motion` desaparece el desplazamiento; se conservan los fundidos. Cada animación de GSAP está dentro de `gsap.matchMedia()` con su rama reducida.
+- [ ] Si hay scroll suave (Lenis): el teclado (espacio, flechas, Tab) y los enlaces a anclas siguen funcionando.
 - [ ] Animaciones solo con `transform` y `opacity`; interfaz por debajo de 300ms.
 - [ ] HTML semántico (`header`, `main`, `nav`, un solo `h1`), `alt` en imágenes, `lang` en `<html>`.
 
@@ -28,13 +29,15 @@
 - [ ] LCP ≤ 2,5 s: imagen principal optimizada (AVIF/WebP), con `fetchpriority="high"` y sin `loading="lazy"`.
 - [ ] La página se lee con JS desactivado (nada depende de una animación para verse).
 - [ ] INP ≤ 200 ms: sin JS pesado en el hilo principal.
+- [ ] `'use client'` solo en componentes interactivos o animados; el resto, de servidor. Three.js/R3F cargado con `next/dynamic` y solo en la página que lo usa.
 - [ ] CLS ≤ 0,1: imágenes y vídeos con dimensiones, fuentes con `font-display: swap` y fuente de respaldo ajustada (`size-adjust`).
-- [ ] Fuentes autoalojadas en WOFF2 (cargar Google Fonts desde su servidor tiene riesgo legal en la UE).
+- [ ] Fuentes autoalojadas en WOFF2 con `next/font/local` (cargar Google Fonts desde su servidor tiene riesgo legal en la UE).
 - [ ] Máximo 2 familias tipográficas y solo los pesos usados.
 - [ ] Licencia de cada fuente comprobada para uso web comercial.
 
 ## Código
-- [ ] Todos los valores de diseño salen de variables CSS en `:root`.
+- [ ] Todos los valores de diseño salen de `src/app/tokens.css`; ninguno sigue con el gris de la plantilla.
+- [ ] `npm run build` sin errores de tipos ni `any` para tapar uno.
 - [ ] Sin reglas CSS que se anulen entre sí por especificidad.
 - [ ] Sin errores en la consola.
 - [ ] Cada decisión del plan está de verdad en el código y se ve en las capturas.

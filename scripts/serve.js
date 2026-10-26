@@ -1,6 +1,7 @@
 // Servidor estático mínimo, sin dependencias.
-// Uso: node scripts/serve.js sitios/<nombre> [puerto]
-// Hace falta porque con file:// el navegador bloquea las fuentes autoalojadas (CORS).
+// Uso: node scripts/serve.js <carpeta> [puerto]
+// Lo usa capture.js para servir una página HTML suelta (webs anteriores a Next.js).
+// Para trabajar en un sitio Next.js usa su servidor: npm run dev.
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -19,9 +20,11 @@ function serve(dir, port = 0) {
     if (rel.endsWith('/')) rel += 'index.html';
     const file = path.join(root, rel);
     if (!file.startsWith(root)) { res.writeHead(403); return res.end(); }
-    fs.readFile(file, (err, data) => {
+    // /contacto → /contacto/index.html, como en el build de Astro
+    const target = !path.extname(file) && fs.existsSync(path.join(file, 'index.html')) ? path.join(file, 'index.html') : file;
+    fs.readFile(target, (err, data) => {
       if (err) { res.writeHead(404); return res.end('No encontrado'); }
-      res.writeHead(200, { 'content-type': TYPES[path.extname(file).toLowerCase()] || 'application/octet-stream' });
+      res.writeHead(200, { 'content-type': TYPES[path.extname(target).toLowerCase()] || 'application/octet-stream' });
       res.end(data);
     });
   });

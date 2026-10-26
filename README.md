@@ -13,8 +13,10 @@
 | `REFERENCIAS.md` | Biblioteca: pairings, paletas con contraste, webs de referencia, herramientas | `docs/` |
 | `ENSENANZAS-THREADS.md` | Registro de tus posts: qué aportó cada uno y dónde se colocó | `docs/` |
 | `compendio/` | Investigación de fondo por áreas (sin pasos propios: el protocolo está en `CLAUDE.md`) | `docs/compendio/` |
-| `scripts/` | Servidor local, descarga de fuentes y capturas con comprobaciones | `scripts/` (ver su README) |
-| `sitios/` | Una carpeta por web | `sitios/<nombre>/` |
+| `COMPONENTES.md` | HTML nativo, primitivas sin estilo, shadcn y bibliotecas de efectos: cuándo usar cada una y cómo evitar su aspecto por defecto | `docs/` |
+| `plantilla/` | Proyecto Next.js + TypeScript + GSAP + Lenis vacío, del que se copia cada web | `plantilla/` |
+| `scripts/` | Descarga de fuentes y capturas con comprobaciones (hace el build y lo arranca) | `scripts/` (ver su README) |
+| `sitios/` | Una carpeta por web (un proyecto Next.js cada una) | `sitios/<nombre>/` |
 
 ## Por qué está organizado así
 - **Instrucciones cortas, detalle aparte.** La documentación oficial de Claude Code recomienda CLAUDE.md de menos de 200 líneas, concretos y por secciones; lo largo va en archivos separados. Los `@imports` organizan pero no ahorran contexto, por eso solo se importan los dos documentos que se usan siempre.
