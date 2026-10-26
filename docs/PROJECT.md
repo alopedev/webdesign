@@ -9,17 +9,20 @@ El objetivo no es «una web correcta», sino una web con identidad propia que no
 
 ## Dónde está todo
 - Repo `alopedev/webdesign`. Manda el repo; `/mnt/project-files/docs-base/` es una copia que se mantiene igual.
-- El **protocolo de 10 pasos está en `CLAUDE.md`** y es la única fuente. `docs/compendio/` es investigación de fondo, sin pasos propios.
+- El **protocolo de 11 pasos está en `CLAUDE.md`** y es la única fuente. `docs/compendio/` es investigación de fondo, sin pasos propios.
 - Cada web es un proyecto **Next.js + React + TypeScript** en `sitios/<nombre>/`, copiado de `plantilla/` (con GSAP para animar y Lenis para el scroll suave). Objetivo: webs de nivel Awwwards. Scripts en `scripts/` (fuentes, capturas).
 - Componentes interactivos: `docs/COMPONENTES.md`. Nada del aspecto por defecto de shadcn ni efectos copiados de Aceternity y similares.
 
 ## Cómo trabajas (resumen del protocolo)
+Formo parte del proceso creativo. En cada punto marcado con ◆ me enseñas opciones con imágenes y tu recomendación, y **no sigues hasta que yo elija** (salvo que te diga «decide tú»).
 1. **Entiende el encargo.** Si falta propósito, público, tono o contenido real, pregunta (máximo 3 preguntas). Usa `docs/BRIEF-PLANTILLA.md`.
-2. **Antes del código, el plan:** inventario de 8–12 cosas propias del cliente, **tres direcciones divergentes** y la elegida, idea central con el test del competidor escrito, 4–6 colores con rol, tipografías y escala, layout y el «momento audaz».
-3. **Revisa tu plan** contra `docs/ANTIPATRONES.md`: cambia lo que sea un valor por defecto.
-4. **Construye** respetando `docs/PRINCIPIOS-ESTILO.md`, con fuentes autoalojadas y el stack de `CLAUDE.md`.
-5. **Verifica con `node scripts/capture.js sitios/<nombre>`:** mira las capturas, arregla los 3 problemas más graves y repite (máx. 3 rondas). Luego `docs/CHECKLIST-CALIDAD.md`.
-6. **Registra la dirección** en `docs/REGISTRO-DIRECCIONES.md`.
+2. ◆ **Inspiraciones:** 4–6 referencias con captura y qué se tomaría de cada una. Elijo 2–3 o aporto las mías.
+3. ◆ **Idea y dirección:** tres direcciones divergentes, cada una con su idea central y una lámina (tipografía, paleta, boceto). Elijo una o una mezcla.
+4. **Plan** con la dirección elegida, revisado contra `docs/ANTIPATRONES.md`.
+5. ◆ **Maquetas:** 2–3 de la primera pantalla, sin animación. Elijo y corrijo.
+6. ◆ **Prototipos** del momento interactivo o animado, si lo hay. Elijo.
+7. **Construye y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`.
+8. ◆ **Correcciones** por rondas hasta que dé la web por buena. Luego registra la dirección en `docs/REGISTRO-DIRECCIONES.md`.
 
 ## Reglas fijas
 - Cada web nace del tema, el público y el propósito, no de una plantilla.
@@ -32,6 +35,6 @@ El objetivo no es «una web correcta», sino una web con identidad propia que no
 
 ## Formato de respuesta
 - Castellano, conciso y claro.
-- Primero el plan (breve), luego la web en `sitios/<nombre>/`. Adjunta las capturas.
+- En cada ◆, opciones con imágenes y una recomendación. Al final, la web en `sitios/<nombre>/` con las capturas.
 - Lenguaje sencillo, sin jerga técnica: si un término es inevitable, explícalo en una frase. Las decisiones, por lo que cambian para mí (aspecto, velocidad, mantenimiento).
 - Al final, 2–3 líneas: qué decisión es la más arriesgada y por qué, con una pregunta concreta para mí.
