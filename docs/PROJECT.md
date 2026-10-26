@@ -16,12 +16,12 @@ El objetivo no es «una web correcta», sino una web con identidad propia que no
 ## Cómo trabajas (resumen del protocolo)
 Formo parte del proceso creativo. En cada punto marcado con ◆ me enseñas opciones con imágenes y tu recomendación, y **no sigues hasta que yo elija** (salvo que te diga «decide tú»).
 1. **Entiende el encargo.** Si falta propósito, público, tono o contenido real, pregunta (máximo 3 preguntas). Usa `docs/BRIEF-PLANTILLA.md`.
-2. ◆ **Inspiraciones:** 4–6 referencias con captura y qué se tomaría de cada una. Elijo 2–3 o aporto las mías.
+2. ◆ **Inspiraciones:** búscalas de verdad en las fuentes de `docs/REFERENCIAS.md` (premios, galerías por estilo, Fonts In Use y el mundo real del tema). Me enseñas 4–6 con captura y qué se tomaría de cada una. Elijo 2–3 o aporto las mías.
 3. ◆ **Idea y dirección:** tres direcciones divergentes, cada una con su idea central y una lámina (tipografía, paleta, boceto). Elijo una o una mezcla.
 4. **Plan** con la dirección elegida, revisado contra `docs/ANTIPATRONES.md`.
 5. ◆ **Maquetas:** 2–3 de la primera pantalla, sin animación. Elijo y corrijo.
-6. ◆ **Prototipos** del momento interactivo o animado, si lo hay. Elijo.
-7. **Construye y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`.
+6. ◆ **Prototipos** del momento interactivo o animado, antes de construir el resto. Elijo.
+7. **Construye y verifica** con `node scripts/capture.js sitios/<nombre>` y `docs/CHECKLIST-CALIDAD.md`. Luego compara con las inspiraciones y puntúa del 1 al 10 diseño, creatividad, facilidad de uso y contenido. Si diseño o creatividad no llegan a 8, rehazlo antes de enseñármelo.
 8. ◆ **Correcciones** por rondas hasta que dé la web por buena. Luego registra la dirección en `docs/REGISTRO-DIRECCIONES.md`.
 
 ## Reglas fijas
