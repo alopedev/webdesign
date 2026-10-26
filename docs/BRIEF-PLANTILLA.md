@@ -1,6 +1,6 @@
 # Plantilla de brief + plan de diseño
 
-Sigue el protocolo de `CLAUDE.md`. Parte A = paso 1; Parte B = pasos 2–5; Parte C = paso 6.
+Sigue el protocolo de `CLAUDE.md`. Parte A = paso 1; Parte B = pasos 2–7 (lo que eligió Àlex en cada ◆ queda escrito aquí); Parte C = paso 5.
 
 ## Parte A — Brief (lo rellena Àlex o se pregunta)
 | Campo | Respuesta |
@@ -18,7 +18,8 @@ Sigue el protocolo de `CLAUDE.md`. Parte A = paso 1; Parte B = pasos 2–5; Part
 - **Inventario:** 8–12 cosas que solo son del cliente + 3 palabras de su público.
 - **Referencias:** 1–3, y qué mecanismo se toma de cada una (no su aspecto).
 - **Tres direcciones:** nombre + tipografía + color + composición, una línea de cada. Distintas en las tres cosas.
-- **Elegida y por qué** (una frase). Por qué no las otras dos (una frase cada una).
+- **Elegida por Àlex** (o mezcla) y qué dijo. Recomendación de Claude y por qué, en una frase.
+- **Inspiraciones elegidas por Àlex**, **maqueta elegida** y **prototipo elegido**, con los cambios que pidió.
 - **Idea central:** «En esta página, *[algo propio del cliente]* se convierte en *[recurso de la dirección]*».
 - **Test del competidor, por escrito:** «Competidor: *[nombre o tipo]*. Con él, la frase deja de funcionar porque…». Si no se puede escribir el «porque», la idea es genérica: rehacerla.
 - **Paleta:** 4–6 colores con nombre y rol (fondo, tinta, acento…), en hex para comunicarlos y en OKLCH en el código.

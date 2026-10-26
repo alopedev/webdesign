@@ -17,16 +17,19 @@ Leer solo cuando haga falta (no se importan para ahorrar contexto):
 - `docs/compendio/` — investigación a fondo por áreas; para resolver dudas de un área. Es fondo, no tiene pasos propios: **el protocolo es el de abajo**.
 
 ## Protocolo de cada web (única fuente)
+Àlex forma parte del proceso creativo: elige en los cinco puntos marcados con ◆. En cada uno, Claude presenta las opciones con imágenes y una recomendación (tarjeta de decisión) y **no avanza hasta que Àlex elige**. Solo se salta un ◆ si Àlex dice «decide tú» para ese punto. Mientras espera, no construye nada que dependa de la elección. Cada elección queda escrita en `sitios/<nombre>/PLAN.md`.
+
 1. **Brief.** Rellenar la Parte A de `BRIEF-PLANTILLA.md`. Si falta propósito, público o contenido real, preguntar antes de diseñar (máx. 3 preguntas).
 2. **Mundo del cliente.** Inventario de 8–12 cosas que solo son suyas (objetos, materiales, documentos, cifras, rituales, lugar) + 3 palabras que usaría su público.
-3. **Referencias.** 2–3 concretas (del brief o de `REFERENCIAS.md`). De cada una, qué mecanismo se toma (rejilla, escala, ritmo, uso de la imagen), nunca su aspecto.
-4. **Tres direcciones divergentes**, 5 líneas cada una, distintas en tipografía, color *y* composición. La primera que se ocurra entra como una de las tres, no como la elegida por defecto.
-5. **Elegir.** Descartar la que se parezca al look propio de Claude, a las 5 últimas entradas de `REGISTRO-DIRECCIONES.md` o a la web anterior. Escribir el plan (Parte B del brief) con la idea central y el test del competidor por escrito.
-6. **Revisar el plan** contra `ANTIPATRONES.md` (Parte C). Cambiar todo lo que sea un valor por defecto sin razón ligada al brief.
-7. **Construir** en `sitios/<nombre>/` a partir de `plantilla/` (ver Stack), con contenido real o de muestra marcado como tal, dimensionando con los textos más largos. Lo primero, `src/app/tokens.css` con los valores del plan y `scripts/fonts.js` con sus fuentes.
-8. **Verificar:** `node scripts/capture.js sitios/<nombre> --rutas=/,…` (hace el build, arranca la versión de producción y captura cada ruta). Mirar las capturas, arreglar los 3 problemas más graves y repetir (máx. 3 rondas). El script debe acabar sin avisos o con cada aviso justificado. Después, `CHECKLIST-CALIDAD.md`.
-9. **Cerrar con Àlex:** enseñar las capturas y la decisión más arriesgada con una pregunta concreta.
-10. **Registrar** la dirección en `REGISTRO-DIRECCIONES.md`.
+3. ◆ **Inspiraciones.** Proponer 4–6 referencias concretas (del brief, de `REFERENCIAS.md` o webs reales), cada una con captura y el mecanismo que se tomaría (rejilla, escala, ritmo, uso de la imagen), nunca su aspecto. Àlex elige 2–3 o aporta las suyas.
+4. ◆ **Idea y dirección: tres direcciones divergentes**, cada una con su idea central, distintas en tipografía, color *y* composición. De cada una: 5 líneas + una lámina (muestra de tipografía, paleta con nombres y boceto de la primera pantalla). La primera que se ocurra entra como una de las tres. Antes de enseñarlas, descartar y sustituir la que se parezca al look propio de Claude, a las 5 últimas entradas de `REGISTRO-DIRECCIONES.md` o a la web anterior. Àlex elige una, o una mezcla.
+5. **Plan.** Escribir la Parte B del brief con la dirección elegida, la idea central y el test del competidor por escrito. Revisarlo contra `ANTIPATRONES.md` (Parte C) y cambiar todo lo que sea un valor por defecto sin razón ligada al brief.
+6. ◆ **Maquetas.** 2–3 maquetas estáticas de la primera pantalla (sin animación), que varíen composición y momento audaz dentro de la dirección. Se hacen como rutas del sitio (`/maquetas/a`, `/b`…) y se capturan con `capture.js`. Àlex elige una y dice qué cambiar.
+7. ◆ **Prototipos.** Si la web tiene interacción o animación protagonista, 2 prototipos de solo ese momento (por ejemplo, dos formas de entrar o de responder al gesto), con un vídeo corto o capturas en secuencia. Àlex elige. Si no la tiene, se dice y se salta.
+8. **Construir** en `sitios/<nombre>/` a partir de `plantilla/` (ver Stack), con contenido real o de muestra marcado como tal, dimensionando con los textos más largos. Lo primero, `src/app/tokens.css` con los valores del plan y `scripts/fonts.js` con sus fuentes.
+9. **Verificar:** `node scripts/capture.js sitios/<nombre> --rutas=/,…` (hace el build, arranca la versión de producción y captura cada ruta). Mirar las capturas, arreglar los 3 problemas más graves y repetir (máx. 3 rondas). El script debe acabar sin avisos o con cada aviso justificado. Después, `CHECKLIST-CALIDAD.md`.
+10. ◆ **Correcciones con Àlex:** enseñar las capturas y la decisión más arriesgada con una pregunta concreta. Aplicar sus correcciones por rondas hasta que dé la web por buena.
+11. **Registrar** la dirección en `REGISTRO-DIRECCIONES.md`, con lo que Àlex eligió y descartó en cada ◆.
 
 ## Stack por defecto
 - **Next.js (App Router) + React + TypeScript estricto.** Cada web es un proyecto en `sitios/<nombre>/`, copiado de `plantilla/`. Objetivo: webs de nivel Awwwards (una experiencia continua: animación ligada al scroll, transiciones, WebGL si hace falta).
