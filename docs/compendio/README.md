@@ -32,7 +32,7 @@ Las galerías de inspiración no están aquí: viven en `../REFERENCIAS.md` §3.
 
 ## Cómo usarlo
 
-- Al empezar una web: el **protocolo de 10 pasos** de [06-ia-y-proceso.md](06-ia-y-proceso.md#protocolo-10-pasos-para-que-claude-diseñe-con-identidad).
+- Al empezar una web: el protocolo de `CLAUDE.md` (sale del de [06-ia-y-proceso.md](06-ia-y-proceso.md#protocolo-10-pasos-para-que-claude-diseñe-con-identidad), que queda como origen).
 - Al decidir tipografía, layout, color o movimiento: el archivo del área, sección «Principios» y «Técnicas modernas».
 - Antes de entregar: «Antipatrones» de cada área como complemento de `CHECKLIST-CALIDAD.md`.
 - Las cifras de soporte de navegadores son del 26-10-2026. Revísalas cada pocos meses.

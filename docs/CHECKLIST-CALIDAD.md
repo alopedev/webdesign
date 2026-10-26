@@ -1,10 +1,14 @@
 # Checklist de calidad (antes de entregar)
 
+## Automático
+- [ ] `node scripts/capture.js sitios/<nombre>/index.html` termina sin avisos, o cada aviso está justificado en la entrega. Cubre scroll horizontal, h1 de más de 2 líneas, contraste de texto y errores de consola.
+- [ ] He mirado las tres capturas, no solo el informe del script.
+
 ## Diseño
 - [ ] Se ve a 390px, 768px y 1440px sin scroll horizontal, con los mismos márgenes exteriores.
 - [ ] Ningún titular ocupa más de 2 líneas a ningún ancho.
-- [ ] La idea central pasa el test del competidor.
-- [ ] La jerarquía se entiende con un vistazo de 3 segundos.
+- [ ] El test del competidor está escrito en el plan, con su «porque».
+- [ ] En la captura de 390px, lo primero que se lee es el titular y lo segundo la acción principal.
 - [ ] Hay un solo momento audaz y el resto lo acompaña.
 - [ ] He quitado al menos un elemento decorativo que no aportaba.
 

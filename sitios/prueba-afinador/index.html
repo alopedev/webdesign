@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller Puig · Afinación y restauración de pianos en Girona</title>
+<meta name="description" content="Afinación, regulación y restauración de pianos en Girona. Cada visita termina con la ficha de tu piano.">
+<link rel="preload" href="fonts/BodoniModa-normal-a19a09.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/AtkinsonHyperlegible-normal-386222.woff2) format("woff2")}
+@font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/AtkinsonHyperlegible-normal-a0b5f6.woff2) format("woff2")}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:500 800;font-display:swap;src:url(fonts/BodoniModa-normal-a19a09.woff2) format("woff2")}
+
+
+:root{
+  /* Color: laca negra, marfil de tecla, fieltro rojo de apagador */
+  --laca: oklch(17% 0.012 330);        /* fondo dominante */
+  --laca-2: oklch(22% 0.014 330);      /* superficie */
+  --laca-3: oklch(32% 0.016 330);      /* borde */
+  --marfil: oklch(94% 0.02 90);        /* tinta */
+  --marfil-suave: oklch(78% 0.02 90);  /* texto secundario */
+  --fieltro: oklch(52% 0.19 25);       /* acento: acción principal */
+  --fieltro-hover: oklch(from var(--fieltro) calc(l - 0.05) c h);
+  --ebano: oklch(12% 0.01 330);
+
+  --f-display: "Bodoni Moda", "Didot", serif;
+  --f-text: "Atkinson Hyperlegible", "Verdana", sans-serif;
+  /* Escala 1.333, fluida en titulares */
+  --t-0: 1.0625rem;
+  --t-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --t-2: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem);
+  --t-3: clamp(2rem, 1.2rem + 5vw, 6.5rem);
+
+  --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 7rem;
+  --margen: clamp(1rem, 4vw, 3rem);
+  --radio: 3px;
+  --d-rapida: 120ms; --d-media: 220ms;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:var(--s-4)}
+body{background:var(--laca);color:var(--marfil);font:400 var(--t-0)/1.5 var(--f-text);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--marfil);outline-offset:3px}
+
+.grid{display:grid;grid-template-columns:[full-start] var(--margen) [content-start] repeat(12,minmax(0,1fr)) [content-end] var(--margen) [full-end];column-gap:var(--s-2)}
+.grid > *{grid-column:content}
+
+header.top{padding-block:var(--s-3);align-items:center}
+.marca{grid-column:content-start / span 6;font:600 var(--t-1)/1 var(--f-display);letter-spacing:-.01em;text-decoration:none}
+header nav{grid-column:span 6 / content-end;justify-self:end;display:flex;gap:var(--s-3)}
+
+.hero{padding-block:var(--s-4) var(--s-5)}
+h1{grid-column:content-start / span 10;font:700 var(--t-3)/1.02 var(--f-display);letter-spacing:-.03em;text-wrap:balance;max-inline-size:16ch;font-variation-settings:'opsz' 28}
+.entrada{grid-column:content-start / span 6;margin-top:var(--s-3);font-size:var(--t-1);line-height:1.4;color:var(--marfil-suave);max-inline-size:40ch;text-wrap:pretty}
+.cta{display:inline-block;margin-top:var(--s-4);padding:.9rem 1.4rem;background:var(--fieltro);color:var(--marfil);font-weight:700;text-decoration:none;border-radius:var(--radio);transition:background-color var(--d-rapida) ease-out, transform var(--d-rapida) ease-out}
+.cta:hover{background:var(--fieltro-hover)}
+.cta:active{transform:scale(.97)}
+.hero .acciones{grid-column:content}
+
+/* Momento audaz: el teclado completo, 88 teclas, a sangre */
+.teclado{grid-column:full;position:relative;display:flex;block-size:clamp(9rem,22vw,17rem);background:var(--ebano);padding-inline:var(--margen);border-block:1px solid var(--laca-3)}
+.teclado button{all:unset;cursor:pointer;flex:1 1 0;min-inline-size:0;position:relative;background:var(--marfil);border-inline-end:1px solid oklch(80% .02 90);border-radius:0 0 2px 2px;transition:background-color var(--d-rapida) ease-out}
+.teclado button.n{position:absolute;inset-block-start:0;block-size:62%;background:var(--ebano);z-index:1;border:0;transform:translateX(-50%)}
+.teclado button:focus-visible{outline:3px solid var(--fieltro);outline-offset:-3px}
+.teclado button.on{background:var(--fieltro)}
+.lectura{grid-column:content;display:flex;flex-wrap:wrap;gap:var(--s-1) var(--s-4);padding-block:var(--s-2) var(--s-6);color:var(--marfil-suave);font-variant-numeric:tabular-nums}
+.lectura strong{color:var(--marfil);font-weight:700}
+
+section{padding-block:var(--s-6) 0}
+h2{font:600 var(--t-2)/1.08 var(--f-display);letter-spacing:-.02em;text-wrap:balance;max-inline-size:20ch}
+p{max-inline-size:62ch;text-wrap:pretty}
+
+.servicios h2{grid-column:content-start / span 5}
+.servicios dl{grid-column:span 7 / content-end;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0}
+.servicios dt{font-weight:700;padding-top:var(--s-3);border-top:1px solid var(--laca-3)}
+.servicios dd{padding-left:var(--s-3);padding-top:var(--s-3);border-top:1px solid var(--laca-3);text-align:end;font-variant-numeric:tabular-nums;white-space:nowrap}
+.servicios dd.desc{grid-column:1 / -1;text-align:start;white-space:normal;border:0;padding-top:var(--s-1);padding-bottom:var(--s-3);color:var(--marfil-suave)}
+
+.ficha h2{grid-column:content-start / span 6;align-self:end}
+.ficha > p{grid-column:content-start / span 6;margin-top:var(--s-3);align-self:start}
+.hoja{grid-column:span 5 / content-end;grid-row:1 / span 2;background:var(--marfil);color:var(--ebano);padding:var(--s-4) var(--s-3);border-radius:var(--radio);font-size:.95rem;rotate:-1.2deg;box-shadow:0 1px 0 var(--laca-3)}
+.hoja h3{font:700 var(--t-1)/1.1 var(--f-display);margin-bottom:var(--s-2)}
+.hoja table{inline-size:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hoja th,.hoja td{text-align:start;padding:.4rem 0;border-bottom:1px solid oklch(80% .02 90)}
+.hoja td{text-align:end}
+.hoja .muestra{margin-top:var(--s-2);font-size:.85rem;color:oklch(38% .02 330)}
+
+.pasos h2{grid-column:content-start / span 6}
+.pasos ol{grid-column:content;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4);margin-top:var(--s-4);padding:0;list-style:none;counter-reset:p}
+.pasos li{counter-increment:p}
+.pasos li::before{content:counter(p);display:block;font:700 var(--t-2)/1 var(--f-display);color:var(--fieltro);margin-bottom:var(--s-2)}
+.pasos h3{font-size:var(--t-1);margin-bottom:var(--s-1)}
+
+footer{padding-block:var(--s-6) var(--s-4);color:var(--marfil-suave)}
+footer address{font-style:normal;grid-column:content-start / span 6}
+footer .aviso{grid-column:span 6 / content-end;font-size:.9rem}
+
+@media (max-width: 760px){
+  header nav{gap:var(--s-2)}
+  h1,.entrada,.servicios h2,.servicios dl,.ficha h2,.ficha > p,.hoja,.pasos h2,footer address,footer .aviso{grid-column:content}
+  .hoja{grid-row:auto;margin-top:var(--s-4);rotate:0deg}
+  .pasos ol{grid-template-columns:1fr}
+  .marca{grid-column:content}
+  header nav{grid-column:content;justify-self:start;margin-top:var(--s-1)}
+}
+/* Entrada orquestada: la añade el script con .js */
+.js .hero > *{animation:sube 600ms cubic-bezier(.2,.7,.2,1) both}
+.js .hero > :nth-child(2){animation-delay:60ms}
+.js .hero > :nth-child(3){animation-delay:120ms}
+@keyframes sube{from{opacity:0;transform:translateY(12px)}}
+@media (prefers-reduced-motion: reduce){
+  @keyframes sube{from{opacity:0}}
+  .cta:active{transform:none}
+}
+</style>
+</head>
+<body>
+<header class="top grid">
+  <a class="marca" href="#">Taller Puig</a>
+  <nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#cita">Pedir cita</a></nav>
+</header>
+<main>
+  <div class="hero grid">
+    <h1>Tu piano, otra vez a 440&nbsp;hercios.</h1>
+    <p class="entrada">Afinamos, regulamos y restauramos pianos en Girona y comarcas. Cada visita termina con la ficha de tu piano: qué encontramos y qué hicimos.</p>
+    <div class="acciones"><a class="cta" href="#cita">Pedir cita de afinación</a></div>
+  </div>
+
+  <div class="grid">
+    <div class="teclado" id="teclado" role="group" aria-label="Teclado de 88 teclas: pulsa una para oír su frecuencia"></div>
+    <p class="lectura" aria-live="polite"><span>Tecla <strong id="nota">La4</strong></span><span>Frecuencia <strong id="hz">440,00 Hz</strong></span><span>Tecla número <strong id="num">49</strong> de 88</span></p>
+  </div>
+
+  <section class="servicios grid" id="servicios">
+    <h2>Lo que hacemos en tu casa</h2>
+    <dl>
+      <dt>Afinación</dt><dd>desde 95 €</dd>
+      <dd class="desc">Las 230 cuerdas, una a una, con diapasón y oído. Unos 90 minutos.</dd>
+      <dt>Regulación de la mecánica</dt><dd>desde 260 €</dd>
+      <dd class="desc">Para teclas que se quedan bajadas, repiten mal o suenan desiguales.</dd>
+      <dt>Restauración en el taller</dt><dd>presupuesto</dd>
+      <dd class="desc">Fieltros, martillos y cuerdas nuevas para pianos heredados.</dd>
+    </dl>
+  </section>
+
+  <section class="ficha grid">
+    <h2>La ficha de tu piano</h2>
+    <p>Anotamos marca, número de serie, humedad de la sala y el estado de cada parte. En la siguiente visita sabemos de dónde partimos, y tú sabes qué pagas.</p>
+    <aside class="hoja" aria-label="Ejemplo de ficha">
+      <h3>Ficha de afinación</h3>
+      <table>
+        <tr><th scope="row">Piano</th><td>Vertical, 1974</td></tr>
+        <tr><th scope="row">Número de serie</th><td>XXXXXX</td></tr>
+        <tr><th scope="row">Humedad de la sala</th><td>52 %</td></tr>
+        <tr><th scope="row">Desviación del La4</th><td>−18 cents</td></tr>
+        <tr><th scope="row">Próxima visita</th><td>en 12 meses</td></tr>
+      </table>
+      <p class="muestra">Ficha de ejemplo para esta prueba.</p>
+    </aside>
+  </section>
+
+  <section class="pasos grid" id="cita">
+    <h2>Cómo pedir cita</h2>
+    <ol>
+      <li><h3>Escríbenos</h3><p>Dinos marca y modelo del piano, o mándanos una foto del interior.</p></li>
+      <li><h3>Elegimos día</h3><p>Te damos una franja de mañana o de tarde, de lunes a sábado.</p></li>
+      <li><h3>Afinamos</h3><p>Al acabar te dejamos la ficha y el precio cerrado.</p></li>
+    </ol>
+    <p><a class="cta" href="mailto:hola@example.com">Escribir para pedir cita</a></p>
+  </section>
+</main>
+<footer class="grid">
+  <address>Taller Puig · Girona<br><a href="mailto:hola@example.com">hola@example.com</a></address>
+  <p class="aviso">Negocio ficticio: página de prueba del proyecto Diseñador.</p>
+</footer>
+<script>
+document.documentElement.classList.add('js');
+const kb=document.getElementById('teclado'),nota=document.getElementById('nota'),hz=document.getElementById('hz'),num=document.getElementById('num');
+const nombres=['La','La♯','Si','Do','Do♯','Re','Re♯','Mi','Fa','Fa♯','Sol','Sol♯'];
+let blancas=0;const totalBlancas=52;let ctx;
+for(let i=1;i<=88;i++){
+  const nm=nombres[(i-1)%12],oct=Math.floor((i+8)/12),negra=nm.includes('♯');
+  const b=document.createElement('button');b.type='button';
+  const f=440*Math.pow(2,(i-49)/12);
+  b.setAttribute('aria-label',`${nm}${oct}, ${f.toFixed(2)} hercios`);
+  if(negra){b.className='n';b.style.left=`calc(var(--margen) + (100% - 2 * var(--margen)) * ${blancas/totalBlancas})`;b.style.width=`calc((100% - 2 * var(--margen)) / ${totalBlancas} * .62)`;}
+  else blancas++;
+  b.addEventListener('click',()=>{
+    kb.querySelectorAll('.on').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+    nota.textContent=nm+oct;hz.textContent=f.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2})+' Hz';num.textContent=i;
+    try{ctx=ctx||new AudioContext();const o=ctx.createOscillator(),g=ctx.createGain();o.frequency.value=f;g.gain.setValueAtTime(.2,ctx.currentTime);g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+1.2);o.connect(g).connect(ctx.destination);o.start();o.stop(ctx.currentTime+1.2);}catch(e){}
+  });
+  kb.appendChild(b);
+  if(i===49)b.classList.add('on');
+}
+</script>
+</body>
+</html>
