@@ -13,6 +13,7 @@ Leer solo cuando haga falta (no se importan para ahorrar contexto):
 - `docs/REGISTRO-DIRECCIONES.md` — antes de elegir dirección estética, y para añadir la nueva al acabar.
 - `docs/REFERENCIAS.md` — biblioteca de fuentes, paletas, webs y herramientas; al escribir el plan de diseño.
 - `docs/ENSENANZAS-THREADS.md` — registro de los posts de Àlex y dónde se colocó cada lección; al añadir posts nuevos.
+- `docs/compendio/` — investigación a fondo por áreas (tipografía, layout, color, movimiento, UX/accesibilidad, IA y proceso); al empezar una web, el protocolo de `06-ia-y-proceso.md`, y para resolver dudas de un área.
 
 ## Flujo obligatorio para cada web
 1. Leer el brief. Si falta propósito, público o contenido, preguntar antes de diseñar.
